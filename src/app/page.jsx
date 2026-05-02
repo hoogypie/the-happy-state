@@ -183,8 +183,9 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 .int-img:hover img{transform:scale(1.03)}
 
 /* TEAM */
-.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:56px;max-width:800px}
-@media(max-width:700px){.team-grid{grid-template-columns:1fr}}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+@media(max-width:900px){.team-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.team-grid{grid-template-columns:1fr}}
 .team-card{border-radius:10px;overflow:hidden;background:var(--linen)}
 .team-img-wrap{height:340px;overflow:hidden}
 @media(max-width:768px){.team-img-wrap{height:300px}}
@@ -310,6 +311,7 @@ function CloverLogoCream({ size = 28, opacity = 1 }) {
 const COACHES = [
   { name:"Daniel Vissers", role:"Lifecoach & Theaterdocent", tags:["Positieve Psychologie","Sport","Theater"], bio:"Trainer in positieve psychologie, lifecoach en theaterdocent met een rijke achtergrond in sport. Daniel begeleidt je naar meer bewustzijn en authenticiteit.", img:"/daniel.jpg" },
   { name:"Raphael Dollart", role:"Socioloog & Lifecoach", tags:["Sociologie","Social Work","Kunst"], bio:"Socioloog, hogeschooldocent Social Work en lifecoach. Raphael verbindt wetenschap met praktijk en begeleidt je naar jouw gewenste staat van zijn.", img:"/raphael.jpg" },
+  { name:"Nanda Kling", role:"Volgt", tags:["Volgt"], bio:"Volgt.", img:"/nanda.jpg" },
 ];
 
 const PLANS = [
@@ -573,15 +575,15 @@ export default function HomePage() {
       </section>
 
       {/* MEMBERSHIPS */}
-      <section className="section plans-section" style={{position:"relative",overflow:"hidden"}}>
+      <section id="memberships" className="section plans-section" style={{position:"relative",overflow:"hidden"}}>
         <div style={{position:"absolute",top:-60,right:-60,pointerEvents:"none"}}>
           <CloverLogoCream size={320} opacity={0.05}/>
         </div>
         <div className="plans-header">
           <Reveal>
             <div className="plans-eyebrow">The Happy State</div>
-            <h2 className="plans-title">Memberships</h2>
-            <p className="plans-body">Kies het membership dat past bij jouw ontwikkeling</p>
+            <h2 className="plans-title">Lidmaatschap</h2>
+            <p className="plans-body">Kies het membership dat past bij jouw reis</p>
           </Reveal>
         </div>
 
@@ -594,7 +596,7 @@ export default function HomePage() {
         <Reveal>
           <div className="s-eyebrow">Aanbod</div>
           <h2 className="s-title">Wat we <em>bieden</em></h2>
-          <p className="s-body">Naast onze memberships bieden wij ook 1op1 coaching en teambuidling aan voor bedrijven.</p>
+          <p className="s-body">Naast onze lidmaatschappen bieden wij ook 1:1 coaching en teambuilding aan voor bedrijven.</p>
         </Reveal>
         <div className="services-grid">
           {SERVICES.map((s,i)=>(
@@ -632,7 +634,7 @@ export default function HomePage() {
       <section id="team" className="section">
         <Reveal>
           <div className="s-eyebrow">Het team</div>
-          <h2 className="s-title">Twee <em>coaches</em>,<br/>één verhaal</h2>
+          <h2 className="s-title">Drie <em>coaches</em>,<br/>één verhaal</h2>
           <p className="s-body">Elk met hun eigen specialiteit, samen vormen zij The Happy State.</p>
         </Reveal>
         <div className="team-grid">
@@ -701,11 +703,11 @@ export default function HomePage() {
               {l:"Contact",   id:"contact"},
             ]},
             { title:"Boeken", links:[
-              {l:"Proefles",     id:"aanbod"},
-              {l:"Groepslessen", id:"aanbod"},
-              {l:"1:1 Coaching", id:"aanbod"},
-              {l:"Wie ben ik?",  id:"aanbod"},
-              {l:"Memberships",  id:"memberships"},
+              {l:"Proefles",          id:"aanbod"},
+              {l:"Groepslessen",      id:"aanbod"},
+              {l:"1:1 Coaching",      id:"aanbod"},
+              {l:"Masterclass",       id:"aanbod"},
+              {l:"Lidmaatschap",      id:"memberships"},
             ]},
             { title:"The Happy State", links:[
               {l:"Rotterdam",    id:"contact"},
