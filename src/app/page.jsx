@@ -26,7 +26,7 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 .nav-links{display:flex;gap:36px}
 .nav-link{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--charcoal);opacity:.6;cursor:pointer;transition:opacity .2s;background:none;border:none;font-family:var(--ff-b)}
 .nav-link:hover{opacity:1}
-.nav-cta{background:var(--sage-deep);color:var(--cream);font-family:var(--ff-b);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:11px 26px;border-radius:3px;border:none;cursor:pointer;transition:background .2s;white-space:nowrap}
+.nav-cta{display:inline-block;text-decoration:none;background:var(--sage-deep);color:var(--cream);font-family:var(--ff-b);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:11px 26px;border-radius:3px;border:none;cursor:pointer;transition:background .2s;white-space:nowrap}
 .nav-cta:hover{background:#243D30}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
 .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--charcoal);transition:all .3s}
@@ -34,7 +34,7 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 .mobile-menu.open{display:flex}
 .mobile-link{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--charcoal);opacity:.7;padding:14px 0;border-bottom:1px solid var(--linen);cursor:pointer;background:none;border-left:none;border-right:none;border-top:none;font-family:var(--ff-b);text-align:left}
 .mobile-cta{margin-top:16px;background:var(--sage-deep);color:var(--cream);border:none;padding:13px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;font-weight:500}
-@media(max-width:768px){.nav-links,.nav-cta{display:none}.nav-hamburger{display:flex}.nav{padding:0 24px}}
+@media(max-width:768px){.nav-links,.nav-cta{display:inline-block;text-decoration:none;display:none}.nav-hamburger{display:flex}.nav{padding:0 24px}}
 
 /* HERO */
 .hero{min-height:100vh;padding-top:72px;display:grid;grid-template-columns:1fr 1fr;background:var(--cream)}
@@ -45,9 +45,9 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 .hero-h1 em{font-style:italic;color:var(--terra)}
 .hero-sub{font-size:15px;font-weight:300;line-height:1.85;color:var(--charcoal);opacity:.65;max-width:400px;margin-bottom:48px;animation:fadeUp .9s ease both;animation-delay:.4s}
 .hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;animation:fadeUp .9s ease both;animation-delay:.55s}
-.btn-primary{background:var(--sage-deep);color:var(--cream);border:none;padding:15px 36px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .2s;font-weight:500}
+.btn-primary{display:inline-block;text-decoration:none;background:var(--sage-deep);color:var(--cream);border:none;padding:15px 36px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .2s;font-weight:500}
 .btn-primary:hover{background:#243D30}
-.btn-ghost{background:transparent;border:1.5px solid var(--sand);color:var(--charcoal);padding:13px 30px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;opacity:.7}
+.btn-ghost{display:inline-block;text-decoration:none;background:transparent;border:1.5px solid var(--sand);color:var(--charcoal);padding:13px 30px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;opacity:.7}
 .btn-ghost:hover{border-color:var(--sage);opacity:1}
 .hero-right{position:relative;overflow:hidden;animation:fadeIn 1.2s ease both;animation-delay:.2s}
 .hero-img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:brightness(.92) saturate(.9)}
@@ -90,7 +90,7 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 .reset-title{font-family:var(--ff-d);font-size:clamp(28px,3.5vw,46px);font-weight:300;color:var(--sage-deep);line-height:1.15;margin-bottom:24px}
 .reset-body{font-size:14px;font-weight:300;line-height:1.85;color:var(--charcoal);opacity:.7}
 .reset-accent{font-family:var(--ff-d);font-size:22px;font-style:italic;color:var(--sage);margin-top:24px;margin-bottom:24px}
-.btn-reset{background:transparent;border:1.5px solid var(--sage);color:var(--sage);padding:12px 28px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.btn-reset{display:inline-block;text-decoration:none;background:transparent;border:1.5px solid var(--sage);color:var(--sage);padding:12px 28px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:all .2s}
 .btn-reset:hover{background:var(--sage);color:var(--cream)}
 
 .klaver-section{background:var(--linen)}
@@ -155,7 +155,7 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 .pb-desc{font-size:12px;font-weight:300;color:var(--charcoal);opacity:.6;line-height:1.6}
 .plans-footnote{text-align:center;margin-top:20px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--charcoal);opacity:.35}
 .plans-cta{text-align:center;margin-top:40px}
-.btn-cream{background:var(--sage-deep);color:var(--cream);border:none;padding:15px 40px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;font-weight:500;transition:background .2s}
+.btn-cream{display:inline-block;text-decoration:none;background:var(--sage-deep);color:var(--cream);border:none;padding:15px 40px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;font-weight:500;transition:background .2s}
 .btn-cream:hover{background:#243D30}
 
 /* AANBOD */
@@ -453,7 +453,7 @@ function PlansToggle() {
         Alle memberships zijn maandelijks opzegbaar · Prijzen inclusief 21% BTW
       </div>
       <div className="plans-cta">
-        <button className="btn-cream">Start jouw membership →</button>
+        <a href="/register" className="btn-cream">Start jouw membership →</a>
       </div>
     </div>
   );
@@ -489,12 +489,12 @@ export default function HomePage() {
       <nav className={`nav${scrolled?" scrolled":""}`}>
         <div className="nav-logo" onClick={()=>scrollTo('top')} style={{cursor:"pointer"}}><CloverLogo size={32} variant="filled"/><span className="nav-logo-text">The Happy State</span></div>
         <div className="nav-links">{NAV_LINKS.map(l=><button key={l.label} className="nav-link" onClick={()=>scrollTo(l.href)}>{l.label}</button>)}</div>
-        <button className="nav-cta" onClick={()=>scrollTo('aanbod')}>Boek een sessie</button>
+        <a href="/register" className="nav-cta">Boek een sessie</a>
         <button className="nav-hamburger" onClick={()=>setMenuOpen(o=>!o)}><span/><span/><span/></button>
       </nav>
       <div className={`mobile-menu${menuOpen?" open":""}`}>
         {NAV_LINKS.map(l=><button key={l.label} className="mobile-link" onClick={()=>scrollTo(l.href)}>{l.label}</button>)}
-        <button className="mobile-cta" onClick={()=>scrollTo('aanbod')}>Boek een sessie</button>
+        <a href="/register" className="mobile-cta" style={{display:"block",textAlign:"center"}}>Boek een sessie</a>
       </div>
 
       {/* HERO */}
@@ -513,8 +513,8 @@ export default function HomePage() {
             </div>
           </div>
           <div className="hero-actions">
-            <button className="btn-primary">Boek een sessie</button>
-            <button className="btn-ghost">Plan een kennismaking</button>
+            <a href="/register" className="btn-primary">Boek een sessie</a>
+            <a href="/register" className="btn-ghost">Plan een kennismaking</a>
           </div>
         </div>
         <div className="hero-right">
@@ -551,7 +551,7 @@ export default function HomePage() {
             <p className="reset-body">In een wereld die altijd doorgaat stapelen prikkels, druk en verwachtingen zich op. Je blijft presteren, maar raakt langzaam de connectie met jezelf kwijt.</p>
             <p className="reset-body" style={{marginTop:16}}>Waar de meeste sportscholen zich richten op het fysieke, draait het bij The Happy State om jouw binnenwereld. Een plek waar je niet alleen beweegt, maar ook vertraagt, oplaadt en weer helder wordt.</p>
             <p className="reset-accent">Meer rust. Meer focus. Meer jij.</p>
-            <button className="btn-reset">Start jouw reset →</button>
+            <a href="/register" className="btn-reset">Start jouw reset →</a>
           </div>
         </Reveal>
         <div className="klaver-inner">
