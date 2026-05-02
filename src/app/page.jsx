@@ -454,7 +454,7 @@ function PlansToggle() {
         Alle memberships zijn maandelijks opzegbaar · Prijzen inclusief 21% BTW
       </div>
       <div className="plans-cta">
-        <button className="btn-cream">Start jouw membership →</button>
+        <button className="btn-cream" onClick={()=>router.push('/register')}>Start jouw membership →</button>
       </div>
     </div>
   );
