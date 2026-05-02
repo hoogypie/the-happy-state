@@ -463,7 +463,7 @@ export default function HomePage() {
     { label: "Werkwijze",  href: "werkwijze" },
     { label: "Aanbod",     href: "aanbod" },
     { label: "Team",       href: "team" },
-    { label: "Bedrijven",  href: "aanbod" },
+    
   ];
 
   function scrollTo(id) {
