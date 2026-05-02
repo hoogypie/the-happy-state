@@ -352,10 +352,10 @@ const PLANS = [
 ];
 
 const SERVICES = [
-  { tag:"Persoonlijk", name:"1:1 Coaching", meta:"60–90 min · Op maat", img:"https://images.unsplash.com/photo-1602192509154-0b900ee1f851?auto=format&fit=crop&w=600&q=80" },
-  { tag:"Groep", name:"Groepslessen", meta:"Ma · Wo · Vr · Ochtend & avond", img:"https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" },
-  { tag:"6-weekse cursus", name:"Wie ben ik?", meta:"Di of do · Max 12 deelnemers", img:"https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80" },
-  { tag:"Bedrijven", name:"Teambuilding", meta:"Dagdeel · 3–4 uur · Op locatie", img:"https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" },
+  { tag:"Persoonlijk", name:"1:1 Coaching", meta:"60–90 min · Op maat", img:"/coaching.jpg" },
+  { tag:"Groep", name:"Groepslessen", meta:"Ma · Wo · Vr · Ochtend & avond", img:"/groepslessen.jpg" },
+  { tag:"6-weekse cursus", name:"Wie ben ik?", meta:"Di of do · Max 12 deelnemers", img:"/wiebenik.jpg" },
+  { tag:"Bedrijven", name:"Teambuilding", meta:"Dagdeel · 3–4 uur · Op locatie", img:"/teambuilding.jpg" },
 ];
 
 function useReveal() {
@@ -498,7 +498,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="hero-right">
-          <img className="hero-img" src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80" alt="The Happy State studio"/>
+          <img className="hero-img" src="/hero.jpg" alt="The Happy State studio"/>
           <div className="hero-overlay"/>
           <div className="hero-clover-mark" style={{position:"absolute",top:24,right:24}}>
             <CloverLogo size={140} variant="outline" opacity={0.12}/>
@@ -634,7 +634,7 @@ export default function HomePage() {
       <section className="section" style={{paddingTop:0}}>
         <Reveal>
           <div className="avond-banner">
-            <img className="avond-img" src="https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?auto=format&fit=crop&w=1400&q=80" alt="Avond"/>
+            <img className="avond-img" src="/community.jpg" alt="Avond"/>
             <div className="avond-content">
               <div className="avond-eyebrow">Speciaal evenement</div>
               <h2 className="avond-title">Een avond met<br/><em>The Happy State</em></h2>
