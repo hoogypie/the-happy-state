@@ -208,6 +208,8 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 .avond-sub{font-size:13px;font-weight:300;color:rgba(255,255,255,.6);max-width:440px;line-height:1.7;margin-bottom:32px}
 .btn-outline-white{background:transparent;border:1.5px solid rgba(255,255,255,.4);color:white;padding:13px 32px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
 .btn-outline-white:hover{border-color:white}
+.link-btn{display:inline-block;background:var(--sage-deep);color:var(--cream);border:none;padding:15px 36px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .2s;font-weight:500;text-decoration:none}
+.link-btn:hover{background:#243D30}
 
 /* FOOTER */
 .footer{background:var(--charcoal);padding:64px 56px 40px}
@@ -386,7 +388,7 @@ function FeatureVal({ v }) {
   return <span className="pf-val">{v}</span>;
 }
 
-function PlansToggle({ router }) {
+function PlansToggle() {
   const [dur, setDur] = useState("m1");
   const isBest = dur === "m6";
   return (
@@ -493,8 +495,8 @@ export default function HomePage() {
             </div>
           </div>
           <div className="hero-actions">
-            <button className="btn-primary" onClick={()=>router.push('/register')}>Boek een sessie</button>
-            <button className="btn-ghost" onClick={()=>router.push('/register')}>Plan een kennismaking</button>
+            <Link href="/register" className="link-btn">Boek een sessie</Link>
+            <Link href="/register" className="link-btn">Plan een kennismaking</Link>
           </div>
         </div>
         <div className="hero-right">
@@ -568,7 +570,7 @@ export default function HomePage() {
         </div>
 
         {/* Duration toggle */}
-        <PlansToggle router={router}/>
+        <PlansToggle/>
       </section>
 
       {/* AANBOD */}
