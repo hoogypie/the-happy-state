@@ -50,7 +50,7 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 .btn-ghost{background:transparent;border:1.5px solid var(--sand);color:var(--charcoal);padding:13px 30px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;opacity:.7}
 .btn-ghost:hover{border-color:var(--sage);opacity:1}
 .hero-right{position:relative;overflow:hidden;animation:fadeIn 1.2s ease both;animation-delay:.2s}
-.hero-img{width:100%;height:100%;object-fit:cover;filter:brightness(.92) saturate(.9)}
+.hero-img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:brightness(.92) saturate(.9)}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(46,80,64,.15) 0%,transparent 60%)}
 .hero-float-card{position:absolute;bottom:40px;left:-20px;background:var(--cream);border-radius:4px;padding:18px 22px;box-shadow:0 8px 32px rgba(0,0,0,.1);animation:fadeUp 1s ease both;animation-delay:.8s}
 .hfc-label{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:5px}
@@ -59,7 +59,7 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;min-height:auto}
   .hero-left{padding:56px 24px 48px}
-  .hero-right{height:72vw;min-height:280px}
+  .hero-right{height:85vw;min-height:320px}
   .hero-float-card{left:16px;bottom:20px;padding:12px 16px}
   .hfc-value{font-size:12px}
 }
@@ -183,12 +183,13 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 .int-img:hover img{transform:scale(1.03)}
 
 /* TEAM */
-.team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:56px;max-width:800px}
-@media(max-width:700px){.team-grid{grid-template-columns:1fr}}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+@media(max-width:900px){.team-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.team-grid{grid-template-columns:1fr}}
 .team-card{border-radius:10px;overflow:hidden;background:var(--linen)}
 .team-img-wrap{height:340px;overflow:hidden}
-@media(max-width:768px){.team-img-wrap{height:260px}}
-.team-img{width:100%;height:100%;object-fit:cover;object-position:top;filter:brightness(.9) saturate(.8);transition:transform .5s}
+@media(max-width:768px){.team-img-wrap{height:300px}}
+.team-img{width:100%;height:100%;object-fit:cover;object-position:center 15%;filter:brightness(.9) saturate(.8);transition:transform .5s}
 .team-card:hover .team-img{transform:scale(1.03)}
 .team-info{padding:24px 26px 28px}
 .team-name{font-family:var(--ff-d);font-size:26px;font-weight:400;color:var(--sage-deep);margin-bottom:6px}
@@ -208,6 +209,12 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 .avond-sub{font-size:13px;font-weight:300;color:rgba(255,255,255,.6);max-width:440px;line-height:1.7;margin-bottom:32px}
 .btn-outline-white{background:transparent;border:1.5px solid rgba(255,255,255,.4);color:white;padding:13px 32px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
 .btn-outline-white:hover{border-color:white}
+
+/* CONTACT FORM */
+.contact-field{display:flex;flex-direction:column;gap:6px}
+.contact-field label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);font-weight:500}
+.contact-field input,.contact-field textarea,.contact-field select{background:white;border:1.5px solid var(--linen);border-radius:6px;padding:12px 14px;font-family:var(--ff-b);font-size:14px;font-weight:300;color:var(--charcoal);outline:none;transition:border-color .2s;resize:vertical}
+.contact-field input:focus,.contact-field textarea:focus,.contact-field select:focus{border-color:var(--sage)}
 
 /* FOOTER */
 .footer{background:var(--charcoal);padding:64px 56px 40px}
@@ -304,6 +311,7 @@ function CloverLogoCream({ size = 28, opacity = 1 }) {
 const COACHES = [
   { name:"Daniel Vissers", role:"Lifecoach & Theaterdocent", tags:["Positieve Psychologie","Sport","Theater"], bio:"Trainer in positieve psychologie, lifecoach en theaterdocent met een rijke achtergrond in sport. Daniel begeleidt je naar meer bewustzijn en authenticiteit.", img:"/daniel.jpg" },
   { name:"Raphael Dollart", role:"Socioloog & Lifecoach", tags:["Sociologie","Social Work","Kunst"], bio:"Socioloog, hogeschooldocent Social Work en lifecoach. Raphael verbindt wetenschap met praktijk en begeleidt je naar jouw gewenste staat van zijn.", img:"/raphael.jpg" },
+  { name:"Nanda Kling", role:"Volgt", tags:["Volgt"], bio:"Volgt.", img:"/nanda.jpg" },
 ];
 
 const PLANS = [
@@ -314,10 +322,10 @@ const PLANS = [
     sessions: "2× per week",
     features: [
       { l: "Toegang tot sessies", v: "2× per week" },
+      { l: "Community Events",    v: true },
       { l: "Morning Intentions",  v: false },
       { l: "Personal Coaching",   v: false },
       { l: "Reading",             v: false },
-      { l: "Community Events",    v: true },
     ],
     prices: { m1: 119, m3: 109, m6: 99 },
   },
@@ -329,9 +337,9 @@ const PLANS = [
     features: [
       { l: "Toegang tot sessies", v: "3× per week" },
       { l: "Morning Intentions",  v: true },
+      { l: "Community Events",    v: true },
       { l: "Personal Coaching",   v: false },
       { l: "Reading",             v: false },
-      { l: "Community Events",    v: true },
     ],
     prices: { m1: 149, m3: 139, m6: 129 },
   },
@@ -343,9 +351,9 @@ const PLANS = [
     features: [
       { l: "Toegang tot sessies", v: "Onbeperkt" },
       { l: "Morning Intentions",  v: true },
+      { l: "Community Events",    v: true },
       { l: "Personal Coaching",   v: "1× per maand" },
       { l: "Reading",             v: "1× per maand" },
-      { l: "Community Events",    v: true },
     ],
     prices: { m1: 229, m3: 209, m6: 189 },
   },
@@ -354,7 +362,7 @@ const PLANS = [
 const SERVICES = [
   { tag:"Persoonlijk", name:"1:1 Coaching", meta:"60–90 min · Op maat", img:"/coaching.jpg" },
   { tag:"Groep", name:"Groepslessen", meta:"Ma · Wo · Vr · Ochtend & avond", img:"/groepslessen.jpg" },
-  { tag:"6-weekse cursus", name:"Wie ben ik?", meta:"Di of do · Max 12 deelnemers", img:"/wiebenik.jpg" },
+  { tag:"6-weekse masterclass", name:"Masterclass", meta:"Di of do · Max 10 deelnemers", img:"/wiebenik.jpg" },
   { tag:"Bedrijven", name:"Teambuilding", meta:"Dagdeel · 3–4 uur · Op locatie", img:"/teambuilding.jpg" },
 ];
 
@@ -410,10 +418,6 @@ function PlansToggle() {
             <div className="plan-name">{p.name}</div>
             <div className="plan-tagline">{p.tagline}</div>
             <div className="plan-desc">{p.desc}</div>
-            <div className="plan-price-wrap">
-              <div className="plan-price">€{p.prices[dur]}</div>
-              <div className="plan-price-sub">{dur==="m1" ? "eenmalig" : "per maand"}</div>
-            </div>
             <div className="plan-divider"/>
             <ul className="plan-features">
               {p.features.map(f=>(
@@ -423,6 +427,11 @@ function PlansToggle() {
                 </li>
               ))}
             </ul>
+            <div className="plan-divider"/>
+            <div className="plan-price-wrap">
+              <div className="plan-price">€{p.prices[dur]}</div>
+              <div className="plan-price-sub">{dur==="m1" ? "eenmalig" : "per maand"}</div>
+            </div>
           </div>
         ))}
       </div>
@@ -433,7 +442,7 @@ function PlansToggle() {
             <div className="pb-dur">{d.label} — {d.sub}</div>
             <div className="pb-desc">
               {d.key==="m1" && "Voor wie wil ervaren of dit bij je past."}
-              {d.key==="m3" && "Voor wie echt wil verdiepen en een ritme wil opbouwen."}
+              {d.key==="m3" && "Voor wie echt wil verdiepen."}
               {d.key==="m6" && "Voor wie klaar is om te investeren in blijvende verandering."}
             </div>
           </div>
@@ -459,7 +468,18 @@ export default function HomePage() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
-  const NAV_LINKS = ["Ons verhaal","Aanbod","Team","Cursussen","Bedrijven"];
+  const NAV_LINKS = [
+    { label: "Werkwijze", href: "werkwijze" },
+    { label: "Aanbod",    href: "aanbod" },
+    { label: "Team",      href: "team" },
+    { label: "Contact",   href: "contact" },
+  ];
+
+  function scrollTo(id) {
+    if (id === "top") { window.scrollTo({ top: 0, behavior: "smooth" }); }
+    else { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); }
+    setMenuOpen(false);
+  }
 
   return (
     <div>
@@ -467,20 +487,20 @@ export default function HomePage() {
 
       {/* NAV */}
       <nav className={`nav${scrolled?" scrolled":""}`}>
-        <div className="nav-logo"><CloverLogo size={32} variant="filled"/><span className="nav-logo-text">The Happy State</span></div>
-        <div className="nav-links">{NAV_LINKS.map(l=><button key={l} className="nav-link">{l}</button>)}</div>
-        <button className="nav-cta">Boek een sessie</button>
+        <div className="nav-logo" onClick={()=>scrollTo('top')} style={{cursor:"pointer"}}><CloverLogo size={32} variant="filled"/><span className="nav-logo-text">The Happy State</span></div>
+        <div className="nav-links">{NAV_LINKS.map(l=><button key={l.label} className="nav-link" onClick={()=>scrollTo(l.href)}>{l.label}</button>)}</div>
+        <button className="nav-cta" onClick={()=>scrollTo('aanbod')}>Boek een sessie</button>
         <button className="nav-hamburger" onClick={()=>setMenuOpen(o=>!o)}><span/><span/><span/></button>
       </nav>
       <div className={`mobile-menu${menuOpen?" open":""}`}>
-        {NAV_LINKS.map(l=><button key={l} className="mobile-link" onClick={()=>setMenuOpen(false)}>{l}</button>)}
-        <button className="mobile-cta">Boek een sessie</button>
+        {NAV_LINKS.map(l=><button key={l.label} className="mobile-link" onClick={()=>scrollTo(l.href)}>{l.label}</button>)}
+        <button className="mobile-cta" onClick={()=>scrollTo('aanbod')}>Boek een sessie</button>
       </div>
 
       {/* HERO */}
       <section className="hero">
         <div className="hero-left">
-          <div className="hero-tag"><span className="hero-tag-line"/>Rotterdam · Ontwikkelstudio</div>
+          <div className="hero-tag"><span className="hero-tag-line"/>Rotterdam · West Blaak 7</div>
           <h1 className="hero-h1">De sportschool voor je <em>binnenwereld.</em></h1>
           <div className="hero-voor-wie">
             <div className="hero-blok">
@@ -505,7 +525,7 @@ export default function HomePage() {
           </div>
           <div className="hero-float-card">
             <div className="hfc-label">The Happy State</div>
-            <div className="hfc-value">Verbind met wie je werkelijk bent</div>
+            <div className="hfc-value">Verbind met wie je werkelijk bent.</div>
           </div>
         </div>
       </section>
@@ -515,7 +535,7 @@ export default function HomePage() {
         <div className="marquee-track">
           {[...Array(2)].map((_,i)=>(
             <span key={i} style={{display:"flex"}}>
-              {["Creativiteit","Speelsheid","Actief","Energie","Authenticiteit","Verbinding","The Happy State","Rotterdam"].map(w=>(
+              {["Creativiteit","Speelsheid","Actief","Energie","The Happy State","Rotterdam"].map(w=>(
                 <span key={w} className="marquee-item">{w} <span className="marquee-dot">·</span></span>
               ))}
             </span>
@@ -524,10 +544,10 @@ export default function HomePage() {
       </div>
 
       {/* KLAVERBENADERING */}
-      <section className="section klaver-section">
+      <section id="werkwijze" className="section klaver-section">
         <Reveal style={{marginBottom: 56}}>
           <div className="reset-intro">
-            <h2 className="reset-title">Altijd "aan", maar zelden in balans?</h2>
+            <h2 className="reset-title">Altijd <em style={{color:"var(--terra)",fontStyle:"normal"}}>"aan"</em>, maar zelden in balans?</h2>
             <p className="reset-body">In een wereld die altijd doorgaat stapelen prikkels, druk en verwachtingen zich op. Je blijft presteren, maar raakt langzaam de connectie met jezelf kwijt.</p>
             <p className="reset-body" style={{marginTop:16}}>Waar de meeste sportscholen zich richten op het fysieke, draait het bij The Happy State om jouw binnenwereld. Een plek waar je niet alleen beweegt, maar ook vertraagt, oplaadt en weer helder wordt.</p>
             <p className="reset-accent">Meer rust. Meer focus. Meer jij.</p>
@@ -538,7 +558,7 @@ export default function HomePage() {
           <Reveal>
             <div className="s-eyebrow">Onze werkwijze</div>
             <h2 className="s-title">De <em>klaver</em>benadering</h2>
-            <p className="s-body" style={{marginBottom:40}}>Wij hebben een eigen werkwijze ontwikkeld, gebaseerd op wetenschappelijke inzichten: vier krachtige principes die samen werken aan één doel — jouw <em>Happy State</em>.</p>
+            <p className="s-body" style={{marginBottom:40}}>Wij hebben een eigen werkwijze ontwikkeld, gebaseerd op wetenschappelijke inzichten: vier krachtige principes die samen werken aan één doel. Jouw Happy State.</p>
             <div className="klaver-grid">
               {[{n:"01",title:"Creativiteit",icon:"✦",body:"Expressie en schepping bevorderen mentaal, emotioneel en lichamelijk welbevinden."},{n:"02",title:"Speelsheid",icon:"◈",body:"Lichtvoetigheid en spontaniteit leiden tot emotieregulatie en cognitieve flexibiliteit."},{n:"03",title:"Actief",icon:"◎",body:"Ervaringsleren — de diepste manier van leren door te beleven en te reflecteren."},{n:"04",title:"Energie",icon:"◇",body:"Bewustzijn en beheer van jouw energie leidt tot spiritueel en fysiek welbevinden."}].map(c=>(
                 <div key={c.n} className="klaver-cell">
@@ -555,14 +575,14 @@ export default function HomePage() {
       </section>
 
       {/* MEMBERSHIPS */}
-      <section className="section plans-section" style={{position:"relative",overflow:"hidden"}}>
+      <section id="memberships" className="section plans-section" style={{position:"relative",overflow:"hidden"}}>
         <div style={{position:"absolute",top:-60,right:-60,pointerEvents:"none"}}>
           <CloverLogoCream size={320} opacity={0.05}/>
         </div>
         <div className="plans-header">
           <Reveal>
             <div className="plans-eyebrow">The Happy State</div>
-            <h2 className="plans-title">Memberships</h2>
+            <h2 className="plans-title">Lidmaatschap</h2>
             <p className="plans-body">Kies het membership dat past bij jouw reis</p>
           </Reveal>
         </div>
@@ -572,11 +592,11 @@ export default function HomePage() {
       </section>
 
       {/* AANBOD */}
-      <section className="section" style={{paddingBottom:60}}>
+      <section id="aanbod" className="section" style={{paddingBottom:60}}>
         <Reveal>
           <div className="s-eyebrow">Aanbod</div>
           <h2 className="s-title">Wat we <em>bieden</em></h2>
-          <p className="s-body">Van persoonlijke coaching tot teambuilding voor organisaties.</p>
+          <p className="s-body">Naast onze lidmaatschappen bieden wij ook 1:1 coaching en teambuilding aan voor bedrijven.</p>
         </Reveal>
         <div className="services-grid">
           {SERVICES.map((s,i)=>(
@@ -597,20 +617,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PHOTO INTERLUDE */}
+      {/* COMMUNITY EVENT BANNER */}
       <Reveal>
-        <div className="interlude">
-          <div className="int-img"><img src="https://images.unsplash.com/photo-1536623975707-c4b3b2af565d?auto=format&fit=crop&w=900&q=80" alt="Meditatie"/></div>
-          <div className="int-img"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Rust"/></div>
-          <div className="int-img"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb3?auto=format&fit=crop&w=600&q=80" alt="Ruimte"/></div>
+        <div className="avond-banner" style={{margin:"0 56px",borderRadius:14}}>
+          <img className="avond-img" src="/community.jpg" alt="Community evenement The Happy State"/>
+          <div className="avond-content">
+            <div className="avond-eyebrow">Speciaal evenement</div>
+            <h2 className="avond-title">Een avond met<br/><em>The Happy State</em></h2>
+            <p className="avond-sub">Een interactief avondvullend programma met storytelling, muziek, zang en dans.</p>
+            <button className="btn-outline-white">Blijf op de hoogte →</button>
+          </div>
         </div>
       </Reveal>
 
       {/* TEAM */}
-      <section className="section">
+      <section id="team" className="section">
         <Reveal>
           <div className="s-eyebrow">Het team</div>
-          <h2 className="s-title">Twee <em>coaches</em>,<br/>één verhaal</h2>
+          <h2 className="s-title">Drie <em>coaches</em>,<br/>één verhaal</h2>
           <p className="s-body">Elk met hun eigen specialiteit, samen vormen zij The Happy State.</p>
         </Reveal>
         <div className="team-grid">
@@ -630,17 +654,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* AVOND BANNER */}
-      <section className="section" style={{paddingTop:0}}>
+      {/* CONTACT */}
+      <section id="contact" className="section" style={{background:"var(--linen)"}}>
         <Reveal>
-          <div className="avond-banner">
-            <img className="avond-img" src="/community.jpg" alt="Avond"/>
-            <div className="avond-content">
-              <div className="avond-eyebrow">Speciaal evenement</div>
-              <h2 className="avond-title">Een avond met<br/><em>The Happy State</em></h2>
-              <p className="avond-sub">Een interactief avondvullend programma met storytelling, muziek, zang en dans.</p>
-              <button className="btn-outline-white">Blijf op de hoogte →</button>
+          <div className="s-eyebrow">Contact</div>
+          <h2 className="s-title">Laten we <em>kennismaken</em></h2>
+          <p className="s-body" style={{marginBottom:48}}>Heb je een vraag of wil je meer weten? Stuur ons een bericht en we nemen binnen 2 werkdagen contact op.</p>
+        </Reveal>
+        <Reveal delay={100}>
+          <div style={{maxWidth:560,display:"flex",flexDirection:"column",gap:16}}>
+            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16}}>
+              <div className="contact-field"><label>Voornaam</label><input type="text" placeholder="Jouw voornaam"/></div>
+              <div className="contact-field"><label>Achternaam</label><input type="text" placeholder="Jouw achternaam"/></div>
             </div>
+            <div className="contact-field"><label>E-mailadres</label><input type="email" placeholder="jou@email.com"/></div>
+            <div className="contact-field"><label>Onderwerp</label>
+              <select>
+                <option>Vraag over een sessie</option>
+                <option>1:1 Coaching</option>
+                <option>Groepslessen</option>
+                <option>Wie ben ik? cursus</option>
+                <option>Teambuilding voor bedrijven</option>
+                <option>Overig</option>
+              </select>
+            </div>
+            <div className="contact-field"><label>Bericht</label><textarea placeholder="Vertel iets over jezelf of stel je vraag..." rows={5}/></div>
+            <button className="btn-primary" style={{marginTop:4}}>Verstuur bericht →</button>
           </div>
         </Reveal>
       </section>
@@ -652,14 +691,37 @@ export default function HomePage() {
         </div>
         <div className="footer-top">
           <div>
-            <div className="footer-logo"><CloverLogoCream size={24} opacity={0.75}/><span className="footer-logo-text">The Happy State</span></div>
+            <div className="footer-logo" onClick={()=>scrollTo('top')} style={{cursor:"pointer"}}><CloverLogoCream size={24} opacity={0.75}/><span className="footer-logo-text">The Happy State</span></div>
             <p className="footer-tagline">Jouw vaste plek om te vertragen, te verdiepen en te groeien. Rotterdam.</p>
             <div className="footer-social">{["in","ig","yt"].map(s=><div key={s} className="social-btn">{s}</div>)}</div>
           </div>
-          {[{title:"Navigeer",links:["Ons verhaal","De klaverbenadering","Aanbod","Team","Contact"]},{title:"Boeken",links:["Proefles","Groepslessen","1:1 Coaching","Wie ben ik?","Abonnementen"]},{title:"Bedrijven",links:["Teambuilding","Workshops","Trainingen","Offerte aanvragen"]}].map(col=>(
+          {[
+            { title:"Navigeer", links:[
+              {l:"Werkwijze", id:"werkwijze"},
+              {l:"Aanbod",    id:"aanbod"},
+              {l:"Team",      id:"team"},
+              {l:"Contact",   id:"contact"},
+            ]},
+            { title:"Boeken", links:[
+              {l:"Proefles",          id:"aanbod"},
+              {l:"Groepslessen",      id:"aanbod"},
+              {l:"1:1 Coaching",      id:"aanbod"},
+              {l:"Masterclass",       id:"aanbod"},
+              {l:"Lidmaatschap",      id:"memberships"},
+            ]},
+            { title:"The Happy State", links:[
+              {l:"Rotterdam",    id:"contact"},
+              {l:"Teambuilding", id:"aanbod"},
+              {l:"Offerte",      id:"contact"},
+            ]},
+          ].map(col=>(
             <div key={col.title}>
               <div className="footer-col-title">{col.title}</div>
-              <ul className="footer-links">{col.links.map(l=><li key={l}><a className="footer-link">{l}</a></li>)}</ul>
+              <ul className="footer-links">
+                {col.links.map(item=>(
+                  <li key={item.l}><a className="footer-link" onClick={()=>scrollTo(item.id)} style={{cursor:"pointer"}}>{item.l}</a></li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
