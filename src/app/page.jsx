@@ -597,12 +597,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PHOTO INTERLUDE */}
+      {/* COMMUNITY EVENT BANNER */}
       <Reveal>
-        <div className="interlude">
-          <div className="int-img"><img src="https://images.unsplash.com/photo-1536623975707-c4b3b2af565d?auto=format&fit=crop&w=900&q=80" alt="Meditatie"/></div>
-          <div className="int-img"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Rust"/></div>
-          <div className="int-img"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb3?auto=format&fit=crop&w=600&q=80" alt="Ruimte"/></div>
+        <div className="avond-banner" style={{margin:"0 56px",borderRadius:14}}>
+          <img className="avond-img" src="/community.jpg" alt="Community evenement The Happy State"/>
+          <div className="avond-content">
+            <div className="avond-eyebrow">Speciaal evenement</div>
+            <h2 className="avond-title">Een avond met<br/><em>The Happy State</em></h2>
+            <p className="avond-sub">Een interactief avondvullend programma met storytelling, muziek, zang en dans.</p>
+            <button className="btn-outline-white">Blijf op de hoogte →</button>
+          </div>
         </div>
       </Reveal>
 
@@ -628,21 +632,6 @@ export default function HomePage() {
             </Reveal>
           ))}
         </div>
-      </section>
-
-      {/* AVOND BANNER */}
-      <section className="section" style={{paddingTop:0}}>
-        <Reveal>
-          <div className="avond-banner">
-            <img className="avond-img" src="https://images.unsplash.com/photo-1476611338391-6f395a0ebc7b?auto=format&fit=crop&w=1400&q=80" alt="Avond"/>
-            <div className="avond-content">
-              <div className="avond-eyebrow">Speciaal evenement</div>
-              <h2 className="avond-title">Een avond met<br/><em>The Happy State</em></h2>
-              <p className="avond-sub">Een interactief avondvullend programma met storytelling, muziek, zang en dans.</p>
-              <button className="btn-outline-white">Blijf op de hoogte →</button>
-            </div>
-          </div>
-        </Reveal>
       </section>
 
       {/* FOOTER */}
