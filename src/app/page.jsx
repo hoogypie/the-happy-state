@@ -491,12 +491,12 @@ export default function HomePage() {
       <nav className={`nav${scrolled?" scrolled":""}`}>
         <div className="nav-logo" onClick={()=>scrollTo('top')} style={{cursor:"pointer"}}><CloverLogo size={32} variant="filled"/><span className="nav-logo-text">The Happy State</span></div>
         <div className="nav-links">{NAV_LINKS.map(l=><button key={l.label} className="nav-link" onClick={()=>scrollTo(l.href)}>{l.label}</button>)}</div>
-        <button className="nav-cta" onClick={()=>scrollTo('aanbod')}>Boek een sessie</button>
+        <button className="nav-cta" onClick={()=>scrollTo('aanbod')}onClick={()=>router.push('/register')}>Boek een sessie</button>
         <button className="nav-hamburger" onClick={()=>setMenuOpen(o=>!o)}><span/><span/><span/></button>
       </nav>
       <div className={`mobile-menu${menuOpen?" open":""}`}>
         {NAV_LINKS.map(l=><button key={l.label} className="mobile-link" onClick={()=>scrollTo(l.href)}>{l.label}</button>)}
-        <button className="mobile-cta" onClick={()=>scrollTo('aanbod')}>Boek een sessie</button>
+        <button className="mobile-cta" onClick={()=>router.push('/register')}>Boek een sessie</button>
       </div>
 
       {/* HERO */}
@@ -515,8 +515,8 @@ export default function HomePage() {
             </div>
           </div>
           <div className="hero-actions">
-            <button className="btn-primary">Boek een sessie</button>
-            <button className="btn-ghost">Plan een kennismaking</button>
+            <button className="btn-primary"<button className="btn-primary" onClick={()=>router.push('/register')}>Boek een sessie</button>
+            <button className="btn-ghost"onClick={()=>router.push('/register')}>Plan een kennismaking</button>
           </div>
         </div>
         <div className="hero-right">
@@ -553,7 +553,7 @@ export default function HomePage() {
             <p className="reset-body">In een wereld die altijd doorgaat stapelen prikkels, druk en verwachtingen zich op. Je blijft presteren, maar raakt langzaam de connectie met jezelf kwijt.</p>
             <p className="reset-body" style={{marginTop:16}}>Waar de meeste sportscholen zich richten op het fysieke, draait het bij The Happy State om jouw binnenwereld. Een plek waar je niet alleen beweegt, maar ook vertraagt, oplaadt en weer helder wordt.</p>
             <p className="reset-accent">Meer rust. Meer focus. Meer jij.</p>
-            <button className="btn-reset">Start jouw reset →</button>
+            <button className="btn-reset"onClick={()=>router.push('/register')}>Start jouw reset →</button>
           </div>
         </Reveal>
         <div className="klaver-inner">
