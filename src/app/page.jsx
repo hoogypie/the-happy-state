@@ -498,7 +498,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="hero-right">
-          <img className="hero-img" src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80" alt="The Happy State studio"/>
+          <img className="hero-img" src="/hero.jpg" alt="The Happy State studio"/>
           <div className="hero-overlay"/>
           <div className="hero-clover-mark" style={{position:"absolute",top:24,right:24}}>
             <CloverLogo size={140} variant="outline" opacity={0.12}/>
