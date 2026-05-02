@@ -79,7 +79,20 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 .s-title em{font-style:italic;color:var(--terra)}
 .s-body{font-size:14px;font-weight:300;line-height:1.85;color:var(--charcoal);opacity:.65;max-width:520px}
 
-/* KLAVER */
+/* HERO VOOR WIE blokjes */
+.hero-voor-wie{display:flex;flex-direction:column;gap:16px;margin-bottom:40px}
+.hero-blok{padding:16px 20px;border-left:2px solid var(--sage-light);background:rgba(77,122,94,.05);border-radius:0 6px 6px 0}
+.hero-blok-label{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-bottom:5px;font-weight:500}
+.hero-blok-text{font-size:13px;font-weight:300;line-height:1.7;color:var(--charcoal);opacity:.75}
+
+/* RESET INTRO */
+.reset-intro{max-width:640px;padding-bottom:56px;border-bottom:1px solid var(--sand);margin-bottom:0;opacity:.9}
+.reset-title{font-family:var(--ff-d);font-size:clamp(28px,3.5vw,46px);font-weight:300;color:var(--sage-deep);line-height:1.15;margin-bottom:24px}
+.reset-body{font-size:14px;font-weight:300;line-height:1.85;color:var(--charcoal);opacity:.7}
+.reset-accent{font-family:var(--ff-d);font-size:22px;font-style:italic;color:var(--sage);margin-top:24px;margin-bottom:24px}
+.btn-reset{background:transparent;border:1.5px solid var(--sage);color:var(--sage);padding:12px 28px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.btn-reset:hover{background:var(--sage);color:var(--cream)}
+
 .klaver-section{background:var(--linen)}
 .klaver-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 @media(max-width:900px){.klaver-inner{grid-template-columns:1fr;gap:40px}}
@@ -95,30 +108,55 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 @media(max-width:900px){.klaver-center{display:none}}
 
 /* PLANS */
-.plans-section{background:var(--sage-deep)}
+.plans-section{background:var(--linen)}
 .plans-header{text-align:center;margin-bottom:56px}
-.plans-eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-light);margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:10px}
-.plans-title{font-family:var(--ff-d);font-size:clamp(30px,4vw,56px);font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:16px}
-.plans-title em{font-style:italic;color:var(--sand)}
-.plans-body{font-size:14px;font-weight:300;line-height:1.85;color:rgba(255,255,255,.45);max-width:480px;margin:0 auto}
+.plans-eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:10px}
+.plans-title{font-family:var(--ff-d);font-size:clamp(30px,4vw,56px);font-weight:300;color:var(--sage-deep);line-height:1.1;margin-bottom:16px}
+.plans-title em{font-style:italic;color:var(--terra)}
+.plans-body{font-size:14px;font-weight:300;line-height:1.85;color:var(--charcoal);opacity:.6;max-width:480px;margin:0 auto}
+
+/* Duration toggle */
+.dur-toggle{display:flex;align-items:center;justify-content:center;gap:4px;margin-bottom:48px}
+.dur-pill{background:rgba(0,0,0,.07);border-radius:30px;padding:4px;display:flex;gap:2px}
+.dur-btn{padding:8px 20px;border-radius:24px;border:none;background:transparent;font-family:var(--ff-b);font-size:11px;letter-spacing:.08em;cursor:pointer;color:var(--charcoal);opacity:.5;transition:all .2s;white-space:nowrap}
+.dur-btn.active{background:var(--sage-deep);color:var(--cream);font-weight:500;opacity:1}
+.dur-best{background:rgba(184,101,74,.15);color:var(--terra);font-size:10px;padding:3px 10px;border-radius:10px;letter-spacing:.06em;margin-left:8px}
+
+/* Plan cards */
 .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 @media(max-width:900px){.plans-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
-.plan-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:32px 28px;transition:background .3s}
-.plan-card:hover{background:rgba(255,255,255,.08)}
-.plan-card.featured{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2)}
-.plan-badge{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-light);background:rgba(138,175,150,.15);padding:3px 10px;border-radius:10px;display:inline-block;margin-bottom:14px}
-.plan-name{font-family:var(--ff-d);font-size:26px;font-weight:300;color:var(--cream);margin-bottom:8px}
-.plan-price{font-family:var(--ff-d);font-size:36px;color:var(--sand);margin-bottom:4px}
-.plan-price span{font-size:14px;font-weight:300;color:rgba(255,255,255,.35)}
+.plan-card{background:var(--sage-deep);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:32px 28px;transition:background .3s;position:relative}
+.plan-card:hover{background:#243D30}
+.plan-card:hover .plan-name{color:var(--terra)}
+.plan-card.featured{background:var(--sage-deep);border-color:rgba(255,255,255,.08)}
+.plan-badge-wrap{height:28px;display:flex;align-items:center;margin-bottom:16px}
+.plan-badge{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-deep);background:var(--sage-light);padding:4px 12px;border-radius:10px;display:inline-block;font-weight:500}
+.plan-name{font-family:var(--ff-d);font-size:32px;font-weight:400;color:var(--cream);margin-bottom:4px;letter-spacing:.04em;text-transform:uppercase}
+.plan-tagline{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-light);margin-bottom:10px}
+.plan-desc{font-size:12px;font-weight:300;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:20px;min-height:36px}
+.plan-price-wrap{margin-bottom:20px}
+.plan-price{font-family:var(--ff-d);font-size:48px;font-weight:400;color:var(--cream);line-height:1}
+.plan-price-sub{font-size:12px;color:rgba(255,255,255,.4);font-weight:300;margin-top:4px}
+.plan-price-best{display:inline-block;font-size:9px;letter-spacing:.1em;text-transform:uppercase;background:rgba(184,101,74,.25);color:var(--terra);padding:3px 8px;border-radius:4px;margin-top:6px}
 .plan-divider{height:1px;background:rgba(255,255,255,.08);margin:20px 0}
 .plan-features{list-style:none}
-.plan-feature{font-size:12px;font-weight:300;color:rgba(255,255,255,.6);padding:5px 0;display:flex;align-items:center;gap:9px;border-bottom:1px solid rgba(255,255,255,.04)}
+.plan-feature{font-size:12px;font-weight:300;padding:7px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.05);gap:8px}
 .plan-feature:last-child{border:none}
-.pf-check{color:var(--sage-light);flex-shrink:0}
-.pf-dash{color:rgba(255,255,255,.2);flex-shrink:0}
-.plans-cta{text-align:center;margin-top:48px}
-.btn-cream{background:var(--cream);color:var(--sage-deep);border:none;padding:15px 40px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;font-weight:500}
-.btn-cream:hover{background:var(--linen)}
+.pf-label{color:rgba(255,255,255,.5)}
+.pf-val{color:var(--cream);font-weight:400;font-size:11px;text-align:right}
+.pf-check{color:var(--sage-light);font-size:13px}
+.pf-dash{color:rgba(255,255,255,.2)}
+
+/* Plans bottom */
+.plans-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--sand);border-radius:10px;overflow:hidden;margin-top:32px}
+@media(max-width:900px){.plans-bottom{grid-template-columns:1fr}}
+.pb-cell{background:var(--cream);padding:24px 28px;text-align:center}
+.pb-dur{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:8px}
+.pb-desc{font-size:12px;font-weight:300;color:var(--charcoal);opacity:.6;line-height:1.6}
+.plans-footnote{text-align:center;margin-top:20px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--charcoal);opacity:.35}
+.plans-cta{text-align:center;margin-top:40px}
+.btn-cream{background:var(--sage-deep);color:var(--cream);border:none;padding:15px 40px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;font-weight:500;transition:background .2s}
+.btn-cream:hover{background:#243D30}
 
 /* AANBOD */
 .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:56px}
@@ -194,28 +232,123 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 .footer-legal a:hover{color:rgba(255,255,255,.5)}
 `;
 
-function CloverLogo({ size = 28, color = "var(--sage-deep)", opacity = 1 }) {
+// Leaf path — organic, rounded, with deep centre notch
+const LEAF = ["M 0 0","C -3 -1 -27 -7 -24 -21","C -21 -32 -13 -47 -7 -45","C -3 -43 -1 -37 0 -32","C 1 -37 3 -43 7 -45","C 13 -47 21 -32 24 -21","C 27 -7 3 -1 0 0","Z"].join(" ");
+const VEIN_MID = "M 0 -2 C 0 -12 0 -22 0 -31";
+const VEIN_L   = "M -1 -16 Q -12 -25 -13 -36";
+const VEIN_R   = "M  1 -16 Q  12 -25  13 -36";
+
+// variant: "filled" | "outline"
+// filled = green gradient (nav, footer, float card, standalone)
+// outline = subtle stroke only (watermarks, dark section hints)
+function CloverLogo({ size = 28, variant = "filled", opacity = 1 }) {
+  const cx = 100, cy = 108;
+  const rots = [135, 225, 45, 315];
+  const isFilled = variant === "filled";
   return (
-    <svg width={size} height={Math.round(size*1.1)} viewBox="0 0 40 44" fill="none" style={{opacity,flexShrink:0}}>
-      <ellipse cx="20" cy="11" rx="8" ry="11" fill={color} opacity=".95"/>
-      <ellipse cx="29" cy="20" rx="11" ry="8" fill={color} opacity=".9"/>
-      <ellipse cx="20" cy="29" rx="8" ry="11" fill={color} opacity=".95"/>
-      <ellipse cx="11" cy="20" rx="11" ry="8" fill={color} opacity=".9"/>
-      <circle cx="20" cy="20" r="6" fill={color}/>
-      <path d="M20 38 Q17 41 14 44" stroke={color} strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+    <svg
+      width={size}
+      height={Math.round(size * 1.34)}
+      viewBox="0 0 200 268"
+      fill="none"
+      style={{ opacity, flexShrink: 0 }}
+    >
+      <defs>
+        <linearGradient id="g-sage" x1="25%" y1="5%" x2="75%" y2="95%">
+          <stop offset="0%" stopColor="#9DC4AE"/>
+          <stop offset="100%" stopColor="#1B3E2C"/>
+        </linearGradient>
+      </defs>
+      {rots.map((rot, i) => (
+        <g key={i} transform={`translate(${cx},${cy}) rotate(${rot})`}>
+          <path d={LEAF}
+            fill={isFilled ? "url(#g-sage)" : "none"}
+            stroke={isFilled ? "none" : "#2E5040"}
+            strokeWidth={isFilled ? 0 : 2}
+            strokeLinejoin="round"
+          />
+          <path d={VEIN_MID} fill="none" stroke={isFilled ? "rgba(255,255,255,0.28)" : "rgba(46,80,64,0.25)"} strokeWidth="0.85" strokeLinecap="round"/>
+          <path d={VEIN_L}   fill="none" stroke={isFilled ? "rgba(255,255,255,0.22)" : "rgba(46,80,64,0.2)"} strokeWidth="0.6" strokeLinecap="round" opacity="0.75"/>
+          <path d={VEIN_R}   fill="none" stroke={isFilled ? "rgba(255,255,255,0.22)" : "rgba(46,80,64,0.2)"} strokeWidth="0.6" strokeLinecap="round" opacity="0.75"/>
+        </g>
+      ))}
+      <path
+        d={`M ${cx} ${cy+4} Q ${cx+10} ${cy+58} ${cx-6} ${cy+126}`}
+        fill="none"
+        stroke={isFilled ? "#1B3E2C" : "#2E5040"}
+        strokeWidth={isFilled ? 2.2 : 1.8}
+        strokeLinecap="round"
+        opacity="0.85"
+      />
+    </svg>
+  );
+}
+
+// Cream version for dark backgrounds
+function CloverLogoCream({ size = 28, opacity = 1 }) {
+  const cx = 100, cy = 108;
+  const rots = [135, 225, 45, 315];
+  return (
+    <svg width={size} height={Math.round(size*1.34)} viewBox="0 0 200 268" fill="none" style={{opacity,flexShrink:0}}>
+      {rots.map((rot,i) => (
+        <g key={i} transform={`translate(${cx},${cy}) rotate(${rot})`}>
+          <path d={LEAF} fill="rgba(244,239,230,0.9)" strokeLinejoin="round"/>
+          <path d={VEIN_MID} fill="none" stroke="rgba(46,80,64,0.2)" strokeWidth="0.85" strokeLinecap="round"/>
+        </g>
+      ))}
+      <path d={`M ${cx} ${cy+4} Q ${cx+10} ${cy+58} ${cx-6} ${cy+126}`} fill="none" stroke="rgba(244,239,230,0.7)" strokeWidth="2" strokeLinecap="round"/>
     </svg>
   );
 }
 
 const COACHES = [
-  { name:"Daniel Vissers", role:"Lifecoach & Theaterdocent", tags:["Positieve Psychologie","Sport","Theater"], bio:"Trainer in positieve psychologie, lifecoach en theaterdocent met een rijke achtergrond in sport. Daniel begeleidt je naar meer bewustzijn en authenticiteit.", img:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" },
-  { name:"Raphael Dollart", role:"Socioloog & Lifecoach", tags:["Sociologie","Social Work","Kunst"], bio:"Socioloog, hogeschooldocent Social Work en lifecoach. Raphael verbindt wetenschap met praktijk en begeleidt je naar jouw gewenste staat van zijn.", img:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" },
+  { name:"Daniel Vissers", role:"Lifecoach & Theaterdocent", tags:["Positieve Psychologie","Sport","Theater"], bio:"Trainer in positieve psychologie, lifecoach en theaterdocent met een rijke achtergrond in sport. Daniel begeleidt je naar meer bewustzijn en authenticiteit.", img:"/daniel.jpg" },
+  { name:"Raphael Dollart", role:"Socioloog & Lifecoach", tags:["Sociologie","Social Work","Kunst"], bio:"Socioloog, hogeschooldocent Social Work en lifecoach. Raphael verbindt wetenschap met praktijk en begeleidt je naar jouw gewenste staat van zijn.", img:"/raphael.jpg" },
 ];
 
 const PLANS = [
-  { name:"Basis", featured:false, features:[{l:"Ochtendsessies (ma/wo/vr)",ok:true},{l:"Avondsessies",ok:false},{l:"Cursuskorting",ok:false},{l:"Prioriteit boeken",ok:false}] },
-  { name:"Basis Plus", featured:true, features:[{l:"Ochtendsessies (ma/wo/vr)",ok:true},{l:"Alle avondsessies",ok:true},{l:"Cursuskorting",ok:false},{l:"Prioriteit boeken",ok:false}] },
-  { name:"Premium", featured:false, features:[{l:"Ochtendsessies (ma/wo/vr)",ok:true},{l:"Alle avondsessies",ok:true},{l:"Cursuskorting",ok:true},{l:"Prioriteit boeken",ok:true}] },
+  {
+    name: "Core", slug:"core", featured: false,
+    tagline: "Ritme & Consistentie",
+    desc: "Voor wie een stevig fundament wil bouwen.",
+    sessions: "2× per week",
+    features: [
+      { l: "Toegang tot sessies", v: "2× per week" },
+      { l: "Morning Intentions",  v: false },
+      { l: "Personal Coaching",   v: false },
+      { l: "Reading",             v: false },
+      { l: "Community Events",    v: true },
+    ],
+    prices: { m1: 119, m3: 109, m6: 99 },
+  },
+  {
+    name: "Flow", slug:"flow", featured: true,
+    tagline: "Verdieping & Integratie",
+    desc: "Voor wie meer ruimte wil creëren en dieper wil groeien.",
+    sessions: "3× per week",
+    features: [
+      { l: "Toegang tot sessies", v: "3× per week" },
+      { l: "Morning Intentions",  v: true },
+      { l: "Personal Coaching",   v: false },
+      { l: "Reading",             v: false },
+      { l: "Community Events",    v: true },
+    ],
+    prices: { m1: 149, m3: 139, m6: 129 },
+  },
+  {
+    name: "State", slug:"state", featured: false,
+    tagline: "Transformatie & Persoonlijke Aandacht",
+    desc: "Voor wie volledig wil gaan en kiest voor blijvende verandering.",
+    sessions: "Onbeperkt",
+    features: [
+      { l: "Toegang tot sessies", v: "Onbeperkt" },
+      { l: "Morning Intentions",  v: true },
+      { l: "Personal Coaching",   v: "1× per maand" },
+      { l: "Reading",             v: "1× per maand" },
+      { l: "Community Events",    v: true },
+    ],
+    prices: { m1: 229, m3: 209, m6: 189 },
+  },
 ];
 
 const SERVICES = [
@@ -241,6 +374,82 @@ function Reveal({ children, delay=0, style={} }) {
   return <div ref={ref} className="reveal" style={{transitionDelay:`${delay}ms`,...style}}>{children}</div>;
 }
 
+const DURATIONS = [
+  { key:"m1", label:"1 Maand",    sub:"Kennismaken" },
+  { key:"m3", label:"3 Maanden",  sub:"Verdiepen" },
+  { key:"m6", label:"6 Maanden",  sub:"Transformeren" },
+];
+
+function FeatureVal({ v }) {
+  if (v === true)  return <span className="pf-check">✓</span>;
+  if (v === false) return <span className="pf-dash">—</span>;
+  return <span className="pf-val">{v}</span>;
+}
+
+function PlansToggle() {
+  const [dur, setDur] = useState("m1");
+  const isBest = dur === "m6";
+  return (
+    <div>
+      <div className="dur-toggle">
+        <div className="dur-pill">
+          {DURATIONS.map(d=>(
+            <button key={d.key} className={`dur-btn${dur===d.key?" active":""}`} onClick={()=>setDur(d.key)}>
+              {d.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="plans-grid">
+        {PLANS.map((p,i)=>(
+          <div key={p.name} className={`plan-card${p.featured?" featured":""}`} style={{animationDelay:`${i*80}ms`}}>
+            <div className="plan-badge-wrap">
+              {p.featured && <span className="plan-badge">Meest gekozen</span>}
+            </div>
+            <div className="plan-name">{p.name}</div>
+            <div className="plan-tagline">{p.tagline}</div>
+            <div className="plan-desc">{p.desc}</div>
+            <div className="plan-price-wrap">
+              <div className="plan-price">€{p.prices[dur]}</div>
+              <div className="plan-price-sub">{dur==="m1" ? "eenmalig" : "per maand"}</div>
+            </div>
+            <div className="plan-divider"/>
+            <ul className="plan-features">
+              {p.features.map(f=>(
+                <li key={f.l} className="plan-feature">
+                  <span className="pf-label">{f.l}</span>
+                  <FeatureVal v={f.v}/>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div className="plans-bottom">
+        {DURATIONS.map(d=>(
+          <div key={d.key} className={`pb-cell${dur===d.key?" active":""}`}>
+            <div className="pb-dur">{d.label} — {d.sub}</div>
+            <div className="pb-desc">
+              {d.key==="m1" && "Voor wie wil ervaren of dit bij je past."}
+              {d.key==="m3" && "Voor wie echt wil verdiepen en een ritme wil opbouwen."}
+              {d.key==="m6" && "Voor wie klaar is om te investeren in blijvende verandering."}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="plans-footnote">
+        Alle memberships zijn maandelijks opzegbaar · Prijzen inclusief 21% BTW
+      </div>
+      <div className="plans-cta">
+        <button className="btn-cream">Start jouw membership →</button>
+      </div>
+    </div>
+  );
+}
+
 export default function HomePage() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -258,7 +467,7 @@ export default function HomePage() {
 
       {/* NAV */}
       <nav className={`nav${scrolled?" scrolled":""}`}>
-        <div className="nav-logo"><CloverLogo size={26}/><span className="nav-logo-text">The Happy State</span></div>
+        <div className="nav-logo"><CloverLogo size={32} variant="filled"/><span className="nav-logo-text">The Happy State</span></div>
         <div className="nav-links">{NAV_LINKS.map(l=><button key={l} className="nav-link">{l}</button>)}</div>
         <button className="nav-cta">Boek een sessie</button>
         <button className="nav-hamburger" onClick={()=>setMenuOpen(o=>!o)}><span/><span/><span/></button>
@@ -272,24 +481,31 @@ export default function HomePage() {
       <section className="hero">
         <div className="hero-left">
           <div className="hero-tag"><span className="hero-tag-line"/>Rotterdam · Ontwikkelstudio</div>
-          <h1 className="hero-h1">Verbind<br/>met wie je<br/><em>werkelijk</em> bent</h1>
-          <p className="hero-sub">The Happy State is een plek voor professionals die willen groeien in bewustzijn, authenticiteit en verbinding — via coaching, groepslessen en de klaverbenadering.</p>
+          <h1 className="hero-h1">De sportschool voor je <em>binnenwereld.</em></h1>
+          <div className="hero-voor-wie">
+            <div className="hero-blok">
+              <div className="hero-blok-label">Voor wie?</div>
+              <div className="hero-blok-text">Voor de stedelijke professional die wil vertragen en weer in contact wil komen met zichzelf.</div>
+            </div>
+            <div className="hero-blok">
+              <div className="hero-blok-label">Waarom?</div>
+              <div className="hero-blok-text">Omdat je binnenwereld net zo belangrijk is als je succes aan de buitenkant.</div>
+            </div>
+          </div>
           <div className="hero-actions">
-            <button className="btn-primary">Begin met een proefles</button>
-            <button className="btn-ghost">Bekijk abonnementen</button>
+            <button className="btn-primary">Boek een sessie</button>
+            <button className="btn-ghost">Plan een kennismaking</button>
           </div>
         </div>
         <div className="hero-right">
           <img className="hero-img" src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80" alt="The Happy State studio"/>
           <div className="hero-overlay"/>
-          <svg className="hero-clover-mark" width="160" height="176" viewBox="0 0 40 44">
-            <ellipse cx="20" cy="11" rx="8" ry="11" fill="white"/><ellipse cx="29" cy="20" rx="11" ry="8" fill="white"/>
-            <ellipse cx="20" cy="29" rx="8" ry="11" fill="white"/><ellipse cx="11" cy="20" rx="11" ry="8" fill="white"/>
-            <circle cx="20" cy="20" r="6" fill="white"/>
-          </svg>
+          <div className="hero-clover-mark" style={{position:"absolute",top:24,right:24}}>
+            <CloverLogo size={140} variant="outline" opacity={0.12}/>
+          </div>
           <div className="hero-float-card">
-            <div className="hfc-label">De klaverbenadering</div>
-            <div className="hfc-value">Creativiteit · Speelsheid · Actief · Energie</div>
+            <div className="hfc-label">The Happy State</div>
+            <div className="hfc-value">Verbind met wie je werkelijk bent</div>
           </div>
         </div>
       </section>
@@ -309,11 +525,20 @@ export default function HomePage() {
 
       {/* KLAVERBENADERING */}
       <section className="section klaver-section">
+        <Reveal style={{marginBottom: 56}}>
+          <div className="reset-intro">
+            <h2 className="reset-title">Altijd "aan", maar zelden in balans?</h2>
+            <p className="reset-body">In een wereld die altijd doorgaat stapelen prikkels, druk en verwachtingen zich op. Je blijft presteren, maar raakt langzaam de connectie met jezelf kwijt.</p>
+            <p className="reset-body" style={{marginTop:16}}>Waar de meeste sportscholen zich richten op het fysieke, draait het bij The Happy State om jouw binnenwereld. Een plek waar je niet alleen beweegt, maar ook vertraagt, oplaadt en weer helder wordt.</p>
+            <p className="reset-accent">Meer rust. Meer focus. Meer jij.</p>
+            <button className="btn-reset">Start jouw reset →</button>
+          </div>
+        </Reveal>
         <div className="klaver-inner">
           <Reveal>
             <div className="s-eyebrow">Onze werkwijze</div>
             <h2 className="s-title">De <em>klaver</em>benadering</h2>
-            <p className="s-body" style={{marginBottom:40}}>Wij ontwikkelden een eigen methode gebaseerd op wetenschappelijke inzichten. Vier principes die samen bijdragen aan jouw gewenste staat van zijn.</p>
+            <p className="s-body" style={{marginBottom:40}}>Wij hebben een eigen werkwijze ontwikkeld, gebaseerd op wetenschappelijke inzichten: vier krachtige principes die samen werken aan één doel — jouw <em>Happy State</em>.</p>
             <div className="klaver-grid">
               {[{n:"01",title:"Creativiteit",icon:"✦",body:"Expressie en schepping bevorderen mentaal, emotioneel en lichamelijk welbevinden."},{n:"02",title:"Speelsheid",icon:"◈",body:"Lichtvoetigheid en spontaniteit leiden tot emotieregulatie en cognitieve flexibiliteit."},{n:"03",title:"Actief",icon:"◎",body:"Ervaringsleren — de diepste manier van leren door te beleven en te reflecteren."},{n:"04",title:"Energie",icon:"◇",body:"Bewustzijn en beheer van jouw energie leidt tot spiritueel en fysiek welbevinden."}].map(c=>(
                 <div key={c.n} className="klaver-cell">
@@ -325,39 +550,25 @@ export default function HomePage() {
               ))}
             </div>
           </Reveal>
-          <Reveal delay={200}><div className="klaver-center"><CloverLogo size={260} color="var(--sage)" opacity={0.1}/></div></Reveal>
+          <Reveal delay={200}><div className="klaver-center"><CloverLogo size={380} variant="filled" opacity={0.9}/></div></Reveal>
         </div>
       </section>
 
-      {/* ABONNEMENTEN */}
-      <section className="section plans-section">
+      {/* MEMBERSHIPS */}
+      <section className="section plans-section" style={{position:"relative",overflow:"hidden"}}>
+        <div style={{position:"absolute",top:-60,right:-60,pointerEvents:"none"}}>
+          <CloverLogoCream size={320} opacity={0.05}/>
+        </div>
         <div className="plans-header">
           <Reveal>
-            <div className="plans-eyebrow">Abonnementen</div>
-            <h2 className="plans-title">Kies jouw <em>pad</em></h2>
-            <p className="plans-body">Maandelijks opzegbaar. Kies voor jaarlijks en ontvang één maand gratis.</p>
+            <div className="plans-eyebrow">The Happy State</div>
+            <h2 className="plans-title">Memberships</h2>
+            <p className="plans-body">Kies het membership dat past bij jouw reis</p>
           </Reveal>
         </div>
-        <div className="plans-grid">
-          {PLANS.map((p,i)=>(
-            <Reveal key={p.name} delay={i*80}>
-              <div className={`plan-card${p.featured?" featured":""}`}>
-                {p.featured&&<div className="plan-badge">Meest gekozen</div>}
-                <div className="plan-name">{p.name}</div>
-                <div className="plan-price">€ —<span> / mnd</span></div>
-                <div className="plan-divider"/>
-                <ul className="plan-features">
-                  {p.features.map(f=>(
-                    <li key={f.l} className="plan-feature">
-                      {f.ok?<span className="pf-check">✓</span>:<span className="pf-dash">—</span>}{f.l}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-        <div className="plans-cta"><button className="btn-cream">Bekijk alle abonnementen →</button></div>
+
+        {/* Duration toggle */}
+        <PlansToggle/>
       </section>
 
       {/* AANBOD */}
@@ -435,10 +646,13 @@ export default function HomePage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="footer">
+      <footer className="footer" style={{position:"relative",overflow:"hidden"}}>
+        <div style={{position:"absolute",bottom:-40,right:-40,opacity:.04,pointerEvents:"none"}}>
+          <CloverLogoCream size={280}/>
+        </div>
         <div className="footer-top">
           <div>
-            <div className="footer-logo"><CloverLogo size={22} color="rgba(255,255,255,0.6)"/><span className="footer-logo-text">The Happy State</span></div>
+            <div className="footer-logo"><CloverLogoCream size={24} opacity={0.75}/><span className="footer-logo-text">The Happy State</span></div>
             <p className="footer-tagline">Jouw vaste plek om te vertragen, te verdiepen en te groeien. Rotterdam.</p>
             <div className="footer-social">{["in","ig","yt"].map(s=><div key={s} className="social-btn">{s}</div>)}</div>
           </div>
