@@ -580,8 +580,8 @@ export default function HomePage() {
         <div className="plans-header">
           <Reveal>
             <div className="plans-eyebrow">The Happy State</div>
-            <h2 className="plans-title">Lidmaatschap</h2>
-            <p className="plans-body">Kies het membership dat past bij jouw reis</p>
+            <h2 className="plans-title">Memberships</h2>
+            <p className="plans-body">Kies het membership dat past bij jouw ontwikkeling</p>
           </Reveal>
         </div>
 
@@ -594,7 +594,7 @@ export default function HomePage() {
         <Reveal>
           <div className="s-eyebrow">Aanbod</div>
           <h2 className="s-title">Wat we <em>bieden</em></h2>
-          <p className="s-body">Van persoonlijke coaching tot teambuilding voor organisaties.</p>
+          <p className="s-body">Naast onze memberships bieden wij ook 1op1 coaching en teambuidling aan voor bedrijven.</p>
         </Reveal>
         <div className="services-grid">
           {SERVICES.map((s,i)=>(
