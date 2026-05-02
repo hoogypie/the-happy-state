@@ -352,10 +352,10 @@ const PLANS = [
 ];
 
 const SERVICES = [
-  { tag:"Persoonlijk", name:"1:1 Coaching", meta:"60–90 min · Op maat", img:"https://images.unsplash.com/photo-1602192509154-0b900ee1f851?auto=format&fit=crop&w=600&q=80" },
-  { tag:"Groep", name:"Groepslessen", meta:"Ma · Wo · Vr · Ochtend & avond", img:"https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=600&q=80" },
-  { tag:"6-weekse cursus", name:"Wie ben ik?", meta:"Di of do · Max 12 deelnemers", img:"https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80" },
-  { tag:"Bedrijven", name:"Teambuilding", meta:"Dagdeel · 3–4 uur · Op locatie", img:"https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" },
+  { tag:"Persoonlijk", name:"1:1 Coaching", meta:"60–90 min · Op maat", img:"/coaching.jpg" },
+  { tag:"Groep", name:"Groepslessen", meta:"Ma · Wo · Vr · Ochtend & avond", img:"/groepslessen.jpg" },
+  { tag:"6-weekse cursus", name:"Wie ben ik?", meta:"Di of do · Max 12 deelnemers", img:"/wiebenik.jpg" },
+  { tag:"Bedrijven", name:"Teambuilding", meta:"Dagdeel · 3–4 uur · Op locatie", img:"/teambuilding.jpg" },
 ];
 
 function useReveal() {
@@ -527,7 +527,7 @@ export default function HomePage() {
       <section className="section klaver-section">
         <Reveal style={{marginBottom: 56}}>
           <div className="reset-intro">
-            <h2 className="reset-title">Altijd "aan", maar zelden in balans?</h2>
+            <h2 className="reset-title">Altijd <em style={{color:"var(--terra)",fontStyle:"normal"}}>"aan"</em>, maar zelden in balans?</h2>
             <p className="reset-body">In een wereld die altijd doorgaat stapelen prikkels, druk en verwachtingen zich op. Je blijft presteren, maar raakt langzaam de connectie met jezelf kwijt.</p>
             <p className="reset-body" style={{marginTop:16}}>Waar de meeste sportscholen zich richten op het fysieke, draait het bij The Happy State om jouw binnenwereld. Een plek waar je niet alleen beweegt, maar ook vertraagt, oplaadt en weer helder wordt.</p>
             <p className="reset-accent">Meer rust. Meer focus. Meer jij.</p>
