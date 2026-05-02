@@ -602,9 +602,9 @@ export default function HomePage() {
         <div className="avond-banner" style={{margin:"0 56px",borderRadius:14}}>
           <img className="avond-img" src="/community.jpg" alt="Community evenement The Happy State"/>
           <div className="avond-content">
-            <div className="avond-eyebrow">Speciaal evenement</div>
-            <h2 className="avond-title">Een avond met<br/><em>The Happy State</em></h2>
-            <p className="avond-sub">Een interactief avondvullend programma met storytelling, muziek, zang en dans.</p>
+            <div className="avond-eyebrow"></div>
+            <h2 className="avond-title">The Happy State<br/><em>Community Events</em></h2>
+            <p className="avond-sub">Een interactief programma rondom je binnenwereld</p>
             <button className="btn-outline-white">Blijf op de hoogte →</button>
           </div>
         </div>
