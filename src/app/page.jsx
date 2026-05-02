@@ -320,10 +320,10 @@ const PLANS = [
     sessions: "2× per week",
     features: [
       { l: "Toegang tot sessies", v: "2× per week" },
+      { l: "Community Events",    v: true },
       { l: "Morning Intentions",  v: false },
       { l: "Personal Coaching",   v: false },
       { l: "Reading",             v: false },
-      { l: "Community Events",    v: true },
     ],
     prices: { m1: 119, m3: 109, m6: 99 },
   },
@@ -335,9 +335,9 @@ const PLANS = [
     features: [
       { l: "Toegang tot sessies", v: "3× per week" },
       { l: "Morning Intentions",  v: true },
+      { l: "Community Events",    v: true },
       { l: "Personal Coaching",   v: false },
       { l: "Reading",             v: false },
-      { l: "Community Events",    v: true },
     ],
     prices: { m1: 149, m3: 139, m6: 129 },
   },
@@ -349,9 +349,9 @@ const PLANS = [
     features: [
       { l: "Toegang tot sessies", v: "Onbeperkt" },
       { l: "Morning Intentions",  v: true },
+      { l: "Community Events",    v: true },
       { l: "Personal Coaching",   v: "1× per maand" },
       { l: "Reading",             v: "1× per maand" },
-      { l: "Community Events",    v: true },
     ],
     prices: { m1: 229, m3: 209, m6: 189 },
   },
