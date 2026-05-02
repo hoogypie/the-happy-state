@@ -50,7 +50,7 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 .btn-ghost{background:transparent;border:1.5px solid var(--sand);color:var(--charcoal);padding:13px 30px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;opacity:.7}
 .btn-ghost:hover{border-color:var(--sage);opacity:1}
 .hero-right{position:relative;overflow:hidden;animation:fadeIn 1.2s ease both;animation-delay:.2s}
-.hero-img{width:100%;height:100%;object-fit:cover;filter:brightness(.92) saturate(.9)}
+.hero-img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:brightness(.92) saturate(.9)}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(46,80,64,.15) 0%,transparent 60%)}
 .hero-float-card{position:absolute;bottom:40px;left:-20px;background:var(--cream);border-radius:4px;padding:18px 22px;box-shadow:0 8px 32px rgba(0,0,0,.1);animation:fadeUp 1s ease both;animation-delay:.8s}
 .hfc-label{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:5px}
@@ -59,7 +59,7 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;min-height:auto}
   .hero-left{padding:56px 24px 48px}
-  .hero-right{height:72vw;min-height:280px}
+  .hero-right{height:85vw;min-height:320px}
   .hero-float-card{left:16px;bottom:20px;padding:12px 16px}
   .hfc-value{font-size:12px}
 }
@@ -187,8 +187,8 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 @media(max-width:700px){.team-grid{grid-template-columns:1fr}}
 .team-card{border-radius:10px;overflow:hidden;background:var(--linen)}
 .team-img-wrap{height:340px;overflow:hidden}
-@media(max-width:768px){.team-img-wrap{height:260px}}
-.team-img{width:100%;height:100%;object-fit:cover;object-position:top;filter:brightness(.9) saturate(.8);transition:transform .5s}
+@media(max-width:768px){.team-img-wrap{height:300px}}
+.team-img{width:100%;height:100%;object-fit:cover;object-position:center 15%;filter:brightness(.9) saturate(.8);transition:transform .5s}
 .team-card:hover .team-img{transform:scale(1.03)}
 .team-info{padding:24px 26px 28px}
 .team-name{font-family:var(--ff-d);font-size:26px;font-weight:400;color:var(--sage-deep);margin-bottom:6px}
@@ -498,7 +498,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="hero-right">
-          <img className="hero-img" src="/hero.jpg" alt="The Happy State studio"/>
+          <img className="hero-img" src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80" alt="The Happy State studio"/>
           <div className="hero-overlay"/>
           <div className="hero-clover-mark" style={{position:"absolute",top:24,right:24}}>
             <CloverLogo size={140} variant="outline" opacity={0.12}/>
