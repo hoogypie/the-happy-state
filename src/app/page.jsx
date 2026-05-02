@@ -360,7 +360,7 @@ const PLANS = [
 const SERVICES = [
   { tag:"Persoonlijk", name:"1:1 Coaching", meta:"60–90 min · Op maat", img:"/coaching.jpg" },
   { tag:"Groep", name:"Groepslessen", meta:"Ma · Wo · Vr · Ochtend & avond", img:"/groepslessen.jpg" },
-  { tag:"6-weekse cursus", name:"Wie ben ik?", meta:"Di of do · Max 12 deelnemers", img:"/wiebenik.jpg" },
+  { tag:"6-weekse masterclass", name:"Masterclass", meta:"Di of do · Max 10 deelnemers", img:"/wiebenik.jpg" },
   { tag:"Bedrijven", name:"Teambuilding", meta:"Dagdeel · 3–4 uur · Op locatie", img:"/teambuilding.jpg" },
 ];
 
@@ -440,7 +440,7 @@ function PlansToggle() {
             <div className="pb-dur">{d.label} — {d.sub}</div>
             <div className="pb-desc">
               {d.key==="m1" && "Voor wie wil ervaren of dit bij je past."}
-              {d.key==="m3" && "Voor wie echt wil verdiepen en een ritme wil opbouwen."}
+              {d.key==="m3" && "Voor wie echt wil verdiepen."}
               {d.key==="m6" && "Voor wie klaar is om te investeren in blijvende verandering."}
             </div>
           </div>
@@ -498,7 +498,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="hero">
         <div className="hero-left">
-          <div className="hero-tag"><span className="hero-tag-line"/>Rotterdam · Ontwikkelstudio</div>
+          <div className="hero-tag"><span className="hero-tag-line"/>Rotterdam · West Blaak 7</div>
           <h1 className="hero-h1">De sportschool voor je <em>binnenwereld.</em></h1>
           <div className="hero-voor-wie">
             <div className="hero-blok">
@@ -523,7 +523,7 @@ export default function HomePage() {
           </div>
           <div className="hero-float-card">
             <div className="hfc-label">The Happy State</div>
-            <div className="hfc-value">Verbind met wie je werkelijk bent</div>
+            <div className="hfc-value">Verbind met wie je werkelijk bent.</div>
           </div>
         </div>
       </section>
@@ -533,7 +533,7 @@ export default function HomePage() {
         <div className="marquee-track">
           {[...Array(2)].map((_,i)=>(
             <span key={i} style={{display:"flex"}}>
-              {["Creativiteit","Speelsheid","Actief","Energie","Authenticiteit","Verbinding","The Happy State","Rotterdam"].map(w=>(
+              {["Creativiteit","Speelsheid","Actief","Energie","The Happy State","Rotterdam"].map(w=>(
                 <span key={w} className="marquee-item">{w} <span className="marquee-dot">·</span></span>
               ))}
             </span>
@@ -556,7 +556,7 @@ export default function HomePage() {
           <Reveal>
             <div className="s-eyebrow">Onze werkwijze</div>
             <h2 className="s-title">De <em>klaver</em>benadering</h2>
-            <p className="s-body" style={{marginBottom:40}}>Wij hebben een eigen werkwijze ontwikkeld, gebaseerd op wetenschappelijke inzichten: vier krachtige principes die samen werken aan één doel — jouw <em>Happy State</em>.</p>
+            <p className="s-body" style={{marginBottom:40}}>Wij hebben een eigen werkwijze ontwikkeld, gebaseerd op wetenschappelijke inzichten: vier krachtige principes die samen werken aan één doel. Jouw Happy State.</p>
             <div className="klaver-grid">
               {[{n:"01",title:"Creativiteit",icon:"✦",body:"Expressie en schepping bevorderen mentaal, emotioneel en lichamelijk welbevinden."},{n:"02",title:"Speelsheid",icon:"◈",body:"Lichtvoetigheid en spontaniteit leiden tot emotieregulatie en cognitieve flexibiliteit."},{n:"03",title:"Actief",icon:"◎",body:"Ervaringsleren — de diepste manier van leren door te beleven en te reflecteren."},{n:"04",title:"Energie",icon:"◇",body:"Bewustzijn en beheer van jouw energie leidt tot spiritueel en fysiek welbevinden."}].map(c=>(
                 <div key={c.n} className="klaver-cell">
@@ -580,7 +580,7 @@ export default function HomePage() {
         <div className="plans-header">
           <Reveal>
             <div className="plans-eyebrow">The Happy State</div>
-            <h2 className="plans-title">Memberships</h2>
+            <h2 className="plans-title">Lidmaatschap</h2>
             <p className="plans-body">Kies het membership dat past bij jouw reis</p>
           </Reveal>
         </div>
