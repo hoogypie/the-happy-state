@@ -497,7 +497,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="hero">
         <div className="hero-left">
-          <div className="hero-tag"><span className="hero-tag-line"/>Rotterdam · Ontwikkelstudio</div>
+          <div className="hero-tag"><span className="hero-tag-line"/>Rotterdam · West Blaak 7</div>
           <h1 className="hero-h1">De sportschool voor je <em>binnenwereld.</em></h1>
           <div className="hero-voor-wie">
             <div className="hero-blok">
@@ -522,7 +522,7 @@ export default function HomePage() {
           </div>
           <div className="hero-float-card">
             <div className="hfc-label">The Happy State</div>
-            <div className="hfc-value">Verbind met wie je werkelijk bent</div>
+            <div className="hfc-value">Verbind met wie je werkelijk bent.</div>
           </div>
         </div>
       </section>
@@ -532,7 +532,7 @@ export default function HomePage() {
         <div className="marquee-track">
           {[...Array(2)].map((_,i)=>(
             <span key={i} style={{display:"flex"}}>
-              {["Creativiteit","Speelsheid","Actief","Energie","Authenticiteit","Verbinding","The Happy State","Rotterdam"].map(w=>(
+              {["Creativiteit","Speelsheid","Actief","Energie","The Happy State","Rotterdam"].map(w=>(
                 <span key={w} className="marquee-item">{w} <span className="marquee-dot">·</span></span>
               ))}
             </span>
