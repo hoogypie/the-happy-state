@@ -416,10 +416,6 @@ function PlansToggle() {
             <div className="plan-name">{p.name}</div>
             <div className="plan-tagline">{p.tagline}</div>
             <div className="plan-desc">{p.desc}</div>
-            <div className="plan-price-wrap">
-              <div className="plan-price">€{p.prices[dur]}</div>
-              <div className="plan-price-sub">{dur==="m1" ? "eenmalig" : "per maand"}</div>
-            </div>
             <div className="plan-divider"/>
             <ul className="plan-features">
               {p.features.map(f=>(
@@ -429,6 +425,11 @@ function PlansToggle() {
                 </li>
               ))}
             </ul>
+            <div className="plan-divider"/>
+            <div className="plan-price-wrap">
+              <div className="plan-price">€{p.prices[dur]}</div>
+              <div className="plan-price-sub">{dur==="m1" ? "eenmalig" : "per maand"}</div>
+            </div>
           </div>
         ))}
       </div>
@@ -497,7 +498,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="hero">
         <div className="hero-left">
-          <div className="hero-tag"><span className="hero-tag-line"/>Rotterdam · West Blaak 7</div>
+          <div className="hero-tag"><span className="hero-tag-line"/>Rotterdam · Ontwikkelstudio</div>
           <h1 className="hero-h1">De sportschool voor je <em>binnenwereld.</em></h1>
           <div className="hero-voor-wie">
             <div className="hero-blok">
@@ -522,7 +523,7 @@ export default function HomePage() {
           </div>
           <div className="hero-float-card">
             <div className="hfc-label">The Happy State</div>
-            <div className="hfc-value">Verbind met wie je werkelijk bent.</div>
+            <div className="hfc-value">Verbind met wie je werkelijk bent</div>
           </div>
         </div>
       </section>
@@ -532,7 +533,7 @@ export default function HomePage() {
         <div className="marquee-track">
           {[...Array(2)].map((_,i)=>(
             <span key={i} style={{display:"flex"}}>
-              {["Creativiteit","Speelsheid","Actief","Energie","The Happy State","Rotterdam"].map(w=>(
+              {["Creativiteit","Speelsheid","Actief","Energie","Authenticiteit","Verbinding","The Happy State","Rotterdam"].map(w=>(
                 <span key={w} className="marquee-item">{w} <span className="marquee-dot">·</span></span>
               ))}
             </span>
