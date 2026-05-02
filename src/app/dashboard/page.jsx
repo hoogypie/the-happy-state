@@ -135,7 +135,7 @@ function getWeekDates(offset = 0) {
   });
 }
 
-function buildSlots(dates: Date[]) {
+function buildSlots(dates) {
   const slots = {};
   dates.forEach((date, di) => {
     slots[di] = [];
