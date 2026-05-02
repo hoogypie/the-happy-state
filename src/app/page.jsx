@@ -387,7 +387,7 @@ function FeatureVal({ v }) {
 }
 
 function PlansToggle() {
-  const [dur, setDur] = useState("m1"); const router = useRouter();
+  const [dur, setDur] = useState("m1");
   const router = useRouter();
   const isBest = dur === "m6";
   return (
