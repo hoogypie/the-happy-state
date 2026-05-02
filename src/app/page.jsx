@@ -386,9 +386,8 @@ function FeatureVal({ v }) {
   return <span className="pf-val">{v}</span>;
 }
 
-function PlansToggle() {
+function PlansToggle({ router }) {
   const [dur, setDur] = useState("m1");
-  const router = useRouter();
   const isBest = dur === "m6";
   return (
     <div>
@@ -569,7 +568,7 @@ export default function HomePage() {
         </div>
 
         {/* Duration toggle */}
-        <PlansToggle/>
+        <PlansToggle router={router}/>
       </section>
 
       {/* AANBOD */}
