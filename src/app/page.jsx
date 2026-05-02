@@ -459,7 +459,17 @@ export default function HomePage() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
-  const NAV_LINKS = ["Ons verhaal","Aanbod","Team","Cursussen","Bedrijven"];
+  const NAV_LINKS = [
+    { label: "Werkwijze",  href: "werkwijze" },
+    { label: "Aanbod",     href: "aanbod" },
+    { label: "Team",       href: "team" },
+    { label: "Bedrijven",  href: "aanbod" },
+  ];
+
+  function scrollTo(id) {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
+  }
 
   return (
     <div>
@@ -468,13 +478,13 @@ export default function HomePage() {
       {/* NAV */}
       <nav className={`nav${scrolled?" scrolled":""}`}>
         <div className="nav-logo"><CloverLogo size={32} variant="filled"/><span className="nav-logo-text">The Happy State</span></div>
-        <div className="nav-links">{NAV_LINKS.map(l=><button key={l} className="nav-link">{l}</button>)}</div>
-        <button className="nav-cta">Boek een sessie</button>
+        <div className="nav-links">{NAV_LINKS.map(l=><button key={l.label} className="nav-link" onClick={()=>scrollTo(l.href)}>{l.label}</button>)}</div>
+        <button className="nav-cta" onClick={()=>scrollTo('aanbod')}>Boek een sessie</button>
         <button className="nav-hamburger" onClick={()=>setMenuOpen(o=>!o)}><span/><span/><span/></button>
       </nav>
       <div className={`mobile-menu${menuOpen?" open":""}`}>
-        {NAV_LINKS.map(l=><button key={l} className="mobile-link" onClick={()=>setMenuOpen(false)}>{l}</button>)}
-        <button className="mobile-cta">Boek een sessie</button>
+        {NAV_LINKS.map(l=><button key={l.label} className="mobile-link" onClick={()=>scrollTo(l.href)}>{l.label}</button>)}
+        <button className="mobile-cta" onClick={()=>scrollTo('aanbod')}>Boek een sessie</button>
       </div>
 
       {/* HERO */}
@@ -524,7 +534,7 @@ export default function HomePage() {
       </div>
 
       {/* KLAVERBENADERING */}
-      <section className="section klaver-section">
+      <section id="werkwijze" className="section klaver-section">
         <Reveal style={{marginBottom: 56}}>
           <div className="reset-intro">
             <h2 className="reset-title">Altijd <em style={{color:"var(--terra)",fontStyle:"normal"}}>"aan"</em>, maar zelden in balans?</h2>
@@ -572,7 +582,7 @@ export default function HomePage() {
       </section>
 
       {/* AANBOD */}
-      <section className="section" style={{paddingBottom:60}}>
+      <section id="aanbod" className="section" style={{paddingBottom:60}}>
         <Reveal>
           <div className="s-eyebrow">Aanbod</div>
           <h2 className="s-title">Wat we <em>bieden</em></h2>
@@ -602,16 +612,16 @@ export default function HomePage() {
         <div className="avond-banner" style={{margin:"0 56px",borderRadius:14}}>
           <img className="avond-img" src="/community.jpg" alt="Community evenement The Happy State"/>
           <div className="avond-content">
-            <div className="avond-eyebrow"></div>
-            <h2 className="avond-title">The Happy State<br/><em>Community Events</em></h2>
-            <p className="avond-sub">Een interactief programma rondom je binnenwereld</p>
+            <div className="avond-eyebrow">Speciaal evenement</div>
+            <h2 className="avond-title">Een avond met<br/><em>The Happy State</em></h2>
+            <p className="avond-sub">Een interactief avondvullend programma met storytelling, muziek, zang en dans.</p>
             <button className="btn-outline-white">Blijf op de hoogte →</button>
           </div>
         </div>
       </Reveal>
 
       {/* TEAM */}
-      <section className="section">
+      <section id="team" className="section">
         <Reveal>
           <div className="s-eyebrow">Het team</div>
           <h2 className="s-title">Twee <em>coaches</em>,<br/>één verhaal</h2>
