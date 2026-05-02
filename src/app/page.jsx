@@ -209,6 +209,12 @@ body{background:var(--cream);font-family:var(--ff-b);color:var(--charcoal);overf
 .btn-outline-white{background:transparent;border:1.5px solid rgba(255,255,255,.4);color:white;padding:13px 32px;border-radius:3px;font-family:var(--ff-b);font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
 .btn-outline-white:hover{border-color:white}
 
+/* CONTACT FORM */
+.contact-field{display:flex;flex-direction:column;gap:6px}
+.contact-field label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);font-weight:500}
+.contact-field input,.contact-field textarea,.contact-field select{background:white;border:1.5px solid var(--linen);border-radius:6px;padding:12px 14px;font-family:var(--ff-b);font-size:14px;font-weight:300;color:var(--charcoal);outline:none;transition:border-color .2s;resize:vertical}
+.contact-field input:focus,.contact-field textarea:focus,.contact-field select:focus{border-color:var(--sage)}
+
 /* FOOTER */
 .footer{background:var(--charcoal);padding:64px 56px 40px}
 @media(max-width:768px){.footer{padding:48px 24px 32px}}
@@ -460,14 +466,15 @@ export default function HomePage() {
   }, []);
 
   const NAV_LINKS = [
-    { label: "Werkwijze",  href: "werkwijze" },
-    { label: "Aanbod",     href: "aanbod" },
-    { label: "Team",       href: "team" },
-    
+    { label: "Werkwijze", href: "werkwijze" },
+    { label: "Aanbod",    href: "aanbod" },
+    { label: "Team",      href: "team" },
+    { label: "Contact",   href: "contact" },
   ];
 
   function scrollTo(id) {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    if (id === "top") { window.scrollTo({ top: 0, behavior: "smooth" }); }
+    else { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); }
     setMenuOpen(false);
   }
 
@@ -477,7 +484,7 @@ export default function HomePage() {
 
       {/* NAV */}
       <nav className={`nav${scrolled?" scrolled":""}`}>
-        <div className="nav-logo"><CloverLogo size={32} variant="filled"/><span className="nav-logo-text">The Happy State</span></div>
+        <div className="nav-logo" onClick={()=>scrollTo('top')} style={{cursor:"pointer"}}><CloverLogo size={32} variant="filled"/><span className="nav-logo-text">The Happy State</span></div>
         <div className="nav-links">{NAV_LINKS.map(l=><button key={l.label} className="nav-link" onClick={()=>scrollTo(l.href)}>{l.label}</button>)}</div>
         <button className="nav-cta" onClick={()=>scrollTo('aanbod')}>Boek een sessie</button>
         <button className="nav-hamburger" onClick={()=>setMenuOpen(o=>!o)}><span/><span/><span/></button>
@@ -644,6 +651,36 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* CONTACT */}
+      <section id="contact" className="section" style={{background:"var(--linen)"}}>
+        <Reveal>
+          <div className="s-eyebrow">Contact</div>
+          <h2 className="s-title">Laten we <em>kennismaken</em></h2>
+          <p className="s-body" style={{marginBottom:48}}>Heb je een vraag of wil je meer weten? Stuur ons een bericht en we nemen binnen 2 werkdagen contact op.</p>
+        </Reveal>
+        <Reveal delay={100}>
+          <div style={{maxWidth:560,display:"flex",flexDirection:"column",gap:16}}>
+            <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:16}}>
+              <div className="contact-field"><label>Voornaam</label><input type="text" placeholder="Jouw voornaam"/></div>
+              <div className="contact-field"><label>Achternaam</label><input type="text" placeholder="Jouw achternaam"/></div>
+            </div>
+            <div className="contact-field"><label>E-mailadres</label><input type="email" placeholder="jou@email.com"/></div>
+            <div className="contact-field"><label>Onderwerp</label>
+              <select>
+                <option>Vraag over een sessie</option>
+                <option>1:1 Coaching</option>
+                <option>Groepslessen</option>
+                <option>Wie ben ik? cursus</option>
+                <option>Teambuilding voor bedrijven</option>
+                <option>Overig</option>
+              </select>
+            </div>
+            <div className="contact-field"><label>Bericht</label><textarea placeholder="Vertel iets over jezelf of stel je vraag..." rows={5}/></div>
+            <button className="btn-primary" style={{marginTop:4}}>Verstuur bericht →</button>
+          </div>
+        </Reveal>
+      </section>
+
       {/* FOOTER */}
       <footer className="footer" style={{position:"relative",overflow:"hidden"}}>
         <div style={{position:"absolute",bottom:-40,right:-40,opacity:.04,pointerEvents:"none"}}>
@@ -651,14 +688,37 @@ export default function HomePage() {
         </div>
         <div className="footer-top">
           <div>
-            <div className="footer-logo"><CloverLogoCream size={24} opacity={0.75}/><span className="footer-logo-text">The Happy State</span></div>
+            <div className="footer-logo" onClick={()=>scrollTo('top')} style={{cursor:"pointer"}}><CloverLogoCream size={24} opacity={0.75}/><span className="footer-logo-text">The Happy State</span></div>
             <p className="footer-tagline">Jouw vaste plek om te vertragen, te verdiepen en te groeien. Rotterdam.</p>
             <div className="footer-social">{["in","ig","yt"].map(s=><div key={s} className="social-btn">{s}</div>)}</div>
           </div>
-          {[{title:"Navigeer",links:["Ons verhaal","De klaverbenadering","Aanbod","Team","Contact"]},{title:"Boeken",links:["Proefles","Groepslessen","1:1 Coaching","Wie ben ik?","Abonnementen"]},{title:"Bedrijven",links:["Teambuilding","Workshops","Trainingen","Offerte aanvragen"]}].map(col=>(
+          {[
+            { title:"Navigeer", links:[
+              {l:"Werkwijze", id:"werkwijze"},
+              {l:"Aanbod",    id:"aanbod"},
+              {l:"Team",      id:"team"},
+              {l:"Contact",   id:"contact"},
+            ]},
+            { title:"Boeken", links:[
+              {l:"Proefles",     id:"aanbod"},
+              {l:"Groepslessen", id:"aanbod"},
+              {l:"1:1 Coaching", id:"aanbod"},
+              {l:"Wie ben ik?",  id:"aanbod"},
+              {l:"Memberships",  id:"memberships"},
+            ]},
+            { title:"The Happy State", links:[
+              {l:"Rotterdam",    id:"contact"},
+              {l:"Teambuilding", id:"aanbod"},
+              {l:"Offerte",      id:"contact"},
+            ]},
+          ].map(col=>(
             <div key={col.title}>
               <div className="footer-col-title">{col.title}</div>
-              <ul className="footer-links">{col.links.map(l=><li key={l}><a className="footer-link">{l}</a></li>)}</ul>
+              <ul className="footer-links">
+                {col.links.map(item=>(
+                  <li key={item.l}><a className="footer-link" onClick={()=>scrollTo(item.id)} style={{cursor:"pointer"}}>{item.l}</a></li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
