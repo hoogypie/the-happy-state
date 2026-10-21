@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Happy State — website
 
-## Getting Started
+Next.js-site voor The Happy State (Rotterdam).
 
-First, run the development server:
+## Teksten en foto's aanpassen
+
+Alles staat in **`src/content/site.js`**: teksten, knoppen, foto's, lidmaatschappen.
+
+- **Foto toevoegen:** zet het bestand in `public/` (bijv. `public/hero-1.jpg`) en vul in `site.js` de naam in: `"/hero-1.jpg"`. Staat er `null`, dan toont de site een tijdelijk vlak met "Foto volgt".
+- **Hero-carousel:** `hero.fotos: ["/hero-1.jpg", "/hero-2.jpg"]` — wisselt elke 6 seconden.
+- **Video "Bekijk de sfeer":** `hero.video: "/sfeer.mp4"` of een YouTube-link. Bij `null` wordt de knop niet getoond.
+- **Reviews / events:** de lijsten `lessen.reviews` en `community.events` zijn leeg; de blokken verschijnen zodra je ze invult.
+- **Knop verbergen:** `href: null`. Later een eigen pagina? Zet bijv. `href: "/over-ons"`.
+
+Tip: maak foto's maximaal ±2500 px breed; de site verkleint ze verder automatisch.
+
+## Volgorde van secties
+
+`src/app/page.jsx` — verschuif of verwijder een regel. De secties zelf staan in `src/components/home/sections.jsx`, de opmaak in `src/components/home/home.css`.
+
+## Contactformulier (Formspree)
+
+1. Maak een gratis account op formspree.io met het ontvangende e-mailadres en maak een formulier aan.
+2. Kopieer de code uit de link (`https://formspree.io/f/XXXXXXX` → `XXXXXXX`).
+3. Vercel → Project → Settings → Environment Variables: `NEXT_PUBLIC_FORMSPREE_ID` = die code. Daarna opnieuw deployen.
+
+Zonder code opent het formulier het mailprogramma van de bezoeker (naar `contact.email` in `site.js`).
+
+## Lokaal draaien
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
