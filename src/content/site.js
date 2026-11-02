@@ -120,19 +120,19 @@ export const lessen = {
       naam: "Noise",
       sub: "Van ruis naar helderheid",
       tekst: "Leer gedachten herkennen, loslaten en focus creëren.",
-      foto: "/fotos/les-noise.jpg",
+      illustratie: "noise", // scherpe tekening in code; of vervang door foto: "/fotos/...",
     },
     {
       naam: "Emotions",
       sub: "Begrijpen en reguleren",
       tekst: "Ontdek, voel en leer omgaan met je emoties.",
-      foto: "/fotos/les-emotions.jpg",
+      illustratie: "emotions", // scherpe tekening in code; of vervang door foto: "/fotos/...",
     },
     {
       naam: "Connect",
       sub: "Met jezelf en anderen",
       tekst: "Vergroot je zelfvertrouwen, verbinding en authenticiteit.",
-      foto: "/fotos/les-connect.jpg",
+      illustratie: "connect", // scherpe tekening in code; of vervang door foto: "/fotos/...",
     },
     {
       naam: "1:1 Coaching",

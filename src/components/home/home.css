@@ -327,6 +327,12 @@ main section, #top { scroll-margin-top: var(--nav-h); }
 .oprichters-fotos .photo { aspect-ratio: 3 / 4; border-radius: 14px; }
 .oprichters-fotos.n1 .photo { aspect-ratio: 4 / 5; border-radius: 200px 200px 14px 14px; max-width: 460px; margin: 0 auto; width: 100%; }
 .les-photo img { object-position: center 35%; }
+.les-illu { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6%; background: #FAF8F3; }
+.les-illu svg { width: 62%; height: auto; }
+.les-illu-titel { font-family: var(--ff-b); font-weight: 400; font-size: clamp(18px, 1.9vw, 24px); letter-spacing: .14em; color: var(--charcoal); }
+.les-illu-noise { background: radial-gradient(90% 70% at 10% 100%, #EED6CB 0%, rgba(238,214,203,0) 70%), #FAF8F3; }
+.les-illu-emotions { background: radial-gradient(90% 75% at 95% 0%, #EDD2C7 0%, rgba(237,210,199,0) 70%), #FAF8F3; }
+.les-illu-connect { background: radial-gradient(130% 90% at 70% 0%, #E9CBC3 0%, rgba(233,203,195,.35) 55%, rgba(233,203,195,0) 85%), #FAF8F3; }
 .oprichters-fotos.n2 .photo:first-child { border-radius: 140px 14px 14px 14px; }
 .oprichters-fotos.n2 .photo:last-child { border-radius: 14px 140px 14px 14px; transform: translateY(28px); }
 .oprichters-quote { font-size: 27px; }

@@ -8,6 +8,7 @@ import * as site from "@/content/site";
 import { Btn, CloverLogo, Eyebrow, Icon, Photo, Rich } from "./ui";
 import HeroMedia from "./HeroMedia";
 import ContactForm from "./ContactForm";
+import LesIllustratie from "./LesIllustratie";
 
 /* 1 ─ HERO */
 export function Hero() {
@@ -132,7 +133,11 @@ export function Lessen() {
           <div className="lessen-grid">
             {l.items.map((les, i) => (
               <article key={les.naam} className="les-card reveal" style={{ transitionDelay: `${i * 70}ms` }}>
-                <Photo src={les.foto} alt={les.naam} sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" className="les-photo" />
+                {les.illustratie ? (
+                  <div className="photo les-photo"><LesIllustratie naam={les.illustratie} titel={les.naam} /></div>
+                ) : (
+                  <Photo src={les.foto} alt={les.naam} sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" className="les-photo" />
+                )}
                 <div className="les-body">
                   <h3>{les.naam}</h3>
                   <div className="les-sub">{les.sub}</div>

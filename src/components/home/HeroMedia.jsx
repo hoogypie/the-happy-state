@@ -30,7 +30,7 @@ export default function HeroMedia({ fotos = [], video, videoLabel }) {
       <div className="hero-bg" aria-hidden="true">
         {fotos.map((src, n) => (
           <div key={src} className={`hero-slide${n === i ? " active" : ""}`}>
-            <Image src={src} alt="" fill sizes="100vw" preload={n === 0} style={{ objectFit: "cover" }} />
+            <Image src={src} alt="" fill sizes="100vw" preload={n === 0} quality={85} style={{ objectFit: "cover" }} />
           </div>
         ))}
       </div>
