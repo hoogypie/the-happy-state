@@ -335,7 +335,7 @@ export function Oprichters() {
         </div>
         <div className={`oprichters-fotos n${o.fotos.length} reveal`}>
           {o.fotos.map((f, i) => (
-            <Photo key={i} src={f} alt={i === 0 ? "Daniel" : "Raphael"} sizes="(max-width: 900px) 50vw, 25vw" />
+            <Photo key={i} src={f} alt={o.fotos.length === 1 ? "Daniel en Raphael" : i === 0 ? "Daniel" : "Raphael"} sizes="(max-width: 900px) 50vw, 25vw" />
           ))}
         </div>
         {o.citaat && (

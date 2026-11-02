@@ -53,7 +53,7 @@ export const hero = {
   ],
   // Carousel: zet hier één of meer foto's. Ze wisselen elke 6 seconden.
   // Leeg ([]) = warme achtergrondkleur.
-  fotos: [],
+  fotos: ["/fotos/hero-1.jpg", "/fotos/hero-2.jpg", "/fotos/hero-3.jpg"],
   // Video "Bekijk de sfeer van onze lessen":
   // • eigen bestand in /public: "/sfeer.mp4"
   // • of een YouTube-link: "https://www.youtube.com/watch?v=..."
@@ -89,7 +89,7 @@ export const altijdAan = {
   tekst:
     "Je hebt een druk leven, veel verantwoordelijkheden en je wilt groeien, presteren en genieten. Toch merk je dat je hoofd nooit uitstaat. Bij The Happy State train je actief je binnenwereld, zodat je meer rust, energie en richting ervaart – in je werk, je relaties en je leven.",
   knop: { label: "Ontdek The Happy State", href: "#binnenwereld" },
-  foto: null, // man met gesloten ogen
+  foto: "/fotos/altijd-aan.jpg",
   citaat: "Rust is geen stilstand, maar de basis voor meer focus, creativiteit en energie.",
 };
 
@@ -120,25 +120,25 @@ export const lessen = {
       naam: "Noise",
       sub: "Van ruis naar helderheid",
       tekst: "Leer gedachten herkennen, loslaten en focus creëren.",
-      foto: "/groepslessen.jpg",
+      foto: "/fotos/les-noise.jpg",
     },
     {
       naam: "Emotions",
       sub: "Begrijpen en reguleren",
       tekst: "Ontdek, voel en leer omgaan met je emoties.",
-      foto: "/wiebenik.jpg",
+      foto: "/fotos/les-emotions.jpg",
     },
     {
       naam: "Connect",
       sub: "Met jezelf en anderen",
       tekst: "Vergroot je zelfvertrouwen, verbinding en authenticiteit.",
-      foto: "/community.jpg",
+      foto: "/fotos/les-connect.jpg",
     },
     {
       naam: "1:1 Coaching",
       sub: "Persoonlijke begeleiding en verdieping",
       tekst: "Gerichte sessies voor jouw ontwikkeling en keuzes.",
-      foto: "/coaching.jpg",
+      foto: "/fotos/oprichters.jpg",
     },
   ],
   knopLabel: "Meer informatie",
@@ -162,7 +162,7 @@ export const bedrijven = {
     { icoon: "sprout", naam: "Persoonlijke begeleiding", sub: "Op maat voor jouw team" },
   ],
   knop: { label: "Ontdek ons zakelijke aanbod", href: "#contact", onderwerp: "Zakelijk aanbod" },
-  fotos: ["/teambuilding.jpg"], // één grote of meerdere kleinere sfeerfoto's
+  fotos: ["/fotos/bedrijven.jpg"], // één grote of meerdere kleinere sfeerfoto's
 };
 
 /* 6 ─ DE KLAVERBENADERING */
@@ -180,7 +180,7 @@ export const klaver = {
     { nr: "03", icoon: "activity", naam: "Actief", tekst: "Ervaringsleren – de diepste manier van leren, door te beleven en te reflecteren." },
     { nr: "04", icoon: "zap", naam: "Energie", tekst: "Bewustzijn en beheer van jouw energie leidt tot spiritueel en fysiek welbevinden." },
   ],
-  foto: null,
+  foto: "/fotos/klaver.jpg",
   citaat: "Bewegen. Voelen. Creëren. Groeien.",
 };
 
@@ -193,7 +193,7 @@ export const community = {
   tekst:
     "Inspirerende avonden, workshops en events om dieper te gaan, nieuwe mensen te ontmoeten en samen te groeien.",
   knop: { label: "Bekijk onze events", href: "#contact", onderwerp: "Op de hoogte blijven van events" },
-  fotos: [null, null, null, null], // vier kleinere sfeerfoto's
+  fotos: ["/fotos/community-1.jpg", "/fotos/hero-3.jpg", "/fotos/hero-1.jpg", "/fotos/hero-2.jpg"], // vier kleinere sfeerfoto's
   // Toekomstige events. Leeg = blok wordt niet getoond.
   // Voorbeeld: { datum: "14 nov", titel: "Een avond met The Happy State", tekst: "Storytelling, muziek en dans." }
   events: [],
@@ -207,22 +207,27 @@ export const lidmaatschappen = {
   plannen: [
     {
       naam: "CORE",
-      sub: "Een stevige basis voor je binnenwereld.",
-      prijs: 119,
-      voordelen: ["2 lessen per week", "Toegang tot de studio", "Persoonlijke ontwikkeling", "Community events (selectie)"],
+      sub: "Voor wie één keer per week wil trainen op de binnenwereld.",
+      prijs: 99,
+      voordelen: ["1 groepsles per week", "Toegang tot community events"],
     },
     {
       naam: "FLOW",
-      sub: "Meer verdieping en ritme.",
-      prijs: 149,
+      sub: "Voor wie vaker wil trainen en verdieping zoekt.",
+      prijs: 179,
       uitgelicht: "Meest gekozen",
-      voordelen: ["2 lessen per week", "Morning intentions (45 min)", "Toegang tot de studio", "Community events"],
+      voordelen: ["2 groepslessen per week", "Toegang tot Morning Intentions", "Toegang tot community events"],
     },
     {
       naam: "STATE",
-      sub: "Volledig in je flow.",
-      prijs: 229,
-      voordelen: ["Onbeperkt lessen", "1:1 coachingsessie", "1 tarot reading", "Toegang tot alle events"],
+      sub: "Voor wie volledig wil investeren in persoonlijke ontwikkeling.",
+      prijs: 249,
+      voordelen: [
+        "Onbeperkt groepslessen",
+        "Onbeperkt Morning Intentions",
+        "Toegang tot community events",
+        "Iedere maand 30 minuten 1-op-1 coaching",
+      ],
     },
   ],
   knopLabel: "Kies", // wordt "Kies CORE" enz.
@@ -235,7 +240,7 @@ export const kennismaken = {
   titel: "Start jouw reis naar meer rust, helderheid en energie.",
   tekst:
     "Nieuwsgierig of The Happy State bij jou past? Plan een vrijblijvende kennismaking en ontdek wat wij voor jou kunnen betekenen.",
-  foto: null, // sfeerfoto van de studio
+  foto: "/fotos/hero-1.jpg", // sfeerfoto van de studio
   onderwerpen: [
     "Vrijblijvende kennismaking",
     "Lidmaatschap CORE",
@@ -259,7 +264,7 @@ export const oprichters = {
   ],
   knop: { label: "Lees ons verhaal", href: null }, // later bijv. "/over-ons"
   // Eén gezamenlijke foto, of twee losse portretten
-  fotos: ["/daniel.jpg", "/raphael.jpg"],
+  fotos: ["/fotos/oprichters.jpg"],
   citaat: "Een sterkere binnenwereld maakt een vrijer leven.",
   ondertekening: "Daniel & Raphael",
 };
