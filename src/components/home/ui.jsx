@@ -22,7 +22,7 @@ export function Photo({ src, alt = "", sizes = "100vw", preload = false, classNa
   return (
     <div className={`photo ${className}`}>
       {src ? (
-        <Image src={src} alt={alt} fill sizes={sizes} preload={preload} style={{ objectFit: "cover" }} />
+        <Image src={src} alt={alt} fill sizes={sizes} preload={preload} quality={85} style={{ objectFit: "cover" }} />
       ) : (
         <div className="photo-ph" role="img" aria-label={alt || label}>
           <CloverLogo size={34} variant="outline" opacity={0.35} />
